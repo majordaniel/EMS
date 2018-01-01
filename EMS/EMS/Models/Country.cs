@@ -25,5 +25,6 @@ namespace EMS.Models
         [Index(IsUnique = true)]
         [Remote("IsCountryNameExists","Country",HttpMethod = "POST", ErrorMessage = "Country name already exists!")]
         public string CountryName { get; set; }
+        public virtual List<Division> Divisions { get; set; } 
     }
 }

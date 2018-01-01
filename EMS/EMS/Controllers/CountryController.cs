@@ -30,6 +30,9 @@ namespace EMS.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (country.Id !=0)
+                db.Entry(country).State=EntityState.Modified;
+                else
                 db.Countries.Add(country);
                 db.SaveChanges();
                 return RedirectToAction("SaveCountry");
@@ -37,59 +40,15 @@ namespace EMS.Controllers
             return View(country);
         }
 
-        public ActionResult EditCountry(int? id)
+        public JsonResult Delete(int? id)
         {
-            if (id==null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Country country = db.Countries.Find(id);
-            if (country==null)
-            {
-                return HttpNotFound();
-            }
-            return View(country);
-        }
-
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditCountry(Country country)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(country).State=EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("SaveCountry");
-            }
-            return View(country);
-        }
-
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Country country = db.Countries.Find(id);
-            if (country == null)
-            {
-                return HttpNotFound();
-            }
-            return View(country);
-        }
-
-        // POST: /Country/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+            EMSDbContext db = new EMSDbContext();
             Country country = db.Countries.Find(id);
             db.Countries.Remove(country);
             db.SaveChanges();
-            return RedirectToAction("SaveCountry");
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
-
+        
         [HttpPost]
         public JsonResult IsCountryCodeExists(string countrycode)
         {
