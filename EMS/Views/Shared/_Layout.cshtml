@@ -23,10 +23,47 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Country", "SaveCountry", "Country")</li>
-                    <li>@Html.ActionLink("Division", "SaveDivision", "Division")</li>
-                    <li>@Html.ActionLink("District", "SaveDistrict", "District")</li>
-                    <li>@Html.ActionLink("Policestation", "SavePoliceStation", "PoliceStation")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<i class="fa fa-briefcase" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Employee", "", "")</li>
+                            <li>@Html.ActionLink("View Employee", "", "")</li>
+                            <li>@Html.ActionLink("Edit Employee", "", "")</li>
+                            <li>@Html.ActionLink("Delete Employee", "", "")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Education<i class="fa fa-briefcase" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Education", "", "")</li>
+                            <li>@Html.ActionLink("View Education", "", "")</li>
+                            <li>@Html.ActionLink("Edit Education", "", "")</li>
+                            <li>@Html.ActionLink("Delete Education", "", "")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Employement<i class="fa fa-briefcase" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Employement", "", "")</li>
+                            <li>@Html.ActionLink("View Employement", "", "")</li>
+                            <li>@Html.ActionLink("Edit Employement", "", "")</li>
+                            <li>@Html.ActionLink("Delete Employement", "", "")</li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings<i class="fa fa-briefcase" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Designation", "SaveDesignation", "Designation")</li>
+                            <li>@Html.ActionLink("Department", "SaveDepartment", "Department")</li>
+                            <li>@Html.ActionLink("Country", "SaveCountry", "Country")</li>
+                            <li>@Html.ActionLink("Division", "SaveDivision", "Division")</li>
+                            <li>@Html.ActionLink("District", "SaveDistrict", "District")</li>
+                            <li>@Html.ActionLink("Policestation", "SavePoliceStation", "PoliceStation")</li>
+                            <li>@Html.ActionLink("Union", "SaveUnion", "Union")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

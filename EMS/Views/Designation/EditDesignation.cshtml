@@ -1,0 +1,48 @@
+﻿@model EMS.Models.Designation
+@{
+    ViewBag.Title = "EditDesignation";
+}
+
+<h2></h2>
+<hr />
+<p>
+    @Html.ActionLink("View Department", "ViewDesignation", "Designation", new { @class = "btn btn-primary" })
+</p>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.DesignationCode, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DesignationCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DesignationCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DesignationName, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DesignationName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DesignationName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                @Html.ActionLink("Reset", "SaveDesignation", "Designation", null, new { @class = "btn btn-warning" }) ||
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

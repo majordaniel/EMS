@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -193,10 +194,15 @@
     <Compile Include="Migrations\201801021858432_addDepartment.Designer.cs">
       <DependentUpon>201801021858432_addDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801022100251_addDesignation.cs" />
+    <Compile Include="Migrations\201801022100251_addDesignation.Designer.cs">
+      <DependentUpon>201801022100251_addDesignation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -380,6 +386,10 @@
     <Content Include="Views\Department\ViewAllDepartment.cshtml" />
     <Content Include="Views\Department\EditDepartment.cshtml" />
     <Content Include="Views\Department\DeleteDepartment.cshtml" />
+    <Content Include="Views\Designation\ViewDesignation.cshtml" />
+    <Content Include="Views\Designation\SaveDesignation.cshtml" />
+    <Content Include="Views\Designation\EditDesignation.cshtml" />
+    <Content Include="Views\Designation\DeleteDesignation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -403,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801021858432_addDepartment.resx">
       <DependentUpon>201801021858432_addDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801022100251_addDesignation.resx">
+      <DependentUpon>201801022100251_addDesignation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
