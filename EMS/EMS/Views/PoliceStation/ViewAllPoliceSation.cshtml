@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EMS.Models.PoliceStation>
+
+@{
+    ViewBag.Title = "ViewAllPoliceSation";
+}
+
+<h2>Police station List</h2>
+
+<hr />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+<p>
+    @Html.ActionLink("Add Policestation", "SavePoliceStation", "PoliceStation", new { @class = "btn btn-primary" })
+</p>
+<table id="myTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.District.DistrictName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoliceStationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoliceStationName)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.District.DistrictName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PoliceStationCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PoliceStationName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPoliceStation", new { id = item.Id }) ||
+                    @Html.ActionLink("Delete", "DeletePoliceStation", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}

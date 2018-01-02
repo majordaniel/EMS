@@ -1,0 +1,32 @@
+﻿@model EMS.Models.PoliceStation
+@{
+    ViewBag.Title = "DeletePoliceStation";
+}
+
+<h2></h2>
+<hr/>
+<div align="center">
+    <h3>Are you sure you want to delete this Policestation ?</h3>
+    <hr />
+    <div>
+        @Html.DisplayFor(model => model.District.DistrictName)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.PoliceStationCode)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.PoliceStationName)
+    </div>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> ||
+            @Html.ActionLink("Back", "ViewAllPoliceSation", "PoliceStation", new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
+
+

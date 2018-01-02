@@ -126,5 +126,16 @@ namespace EMS.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public JsonResult IsDivisionCodeExists(string divisionCode)
+        {
+            return Json(!db.Divisions.Any(c => c.DivisionCode == divisionCode), JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult IsDivisionNameExists(string divisionName)
+        {
+            return Json(!db.Divisions.Any(c => c.DivisionName == divisionName), JsonRequestBehavior.AllowGet);
+        }
     }
 }

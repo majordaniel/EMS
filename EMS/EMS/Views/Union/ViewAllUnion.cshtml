@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EMS.Models.Union>
+
+@{
+    ViewBag.Title = "ViewAllUnion";
+}
+
+<h3>Union List</h3>
+<link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+<p>
+    @Html.ActionLink("Add Union", "SaveUnion", "Union", new { @class = "btn btn-primary" })
+</p>
+<table id="myTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PoliceStation.PoliceStationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnionCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnionName)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PoliceStation.PoliceStationCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnionCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnionName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditUnion", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteUnion", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}

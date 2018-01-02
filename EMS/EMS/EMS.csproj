@@ -162,9 +162,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PoliceStationController.cs" />
+    <Compile Include="Controllers\UnionController.cs" />
     <Compile Include="Gateway\EMSDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,6 +184,10 @@
     <Compile Include="Migrations\201801012221444_Division.Designer.cs">
       <DependentUpon>201801012221444_Division.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801021603023_adddistrictpolicestaionunion.cs" />
+    <Compile Include="Migrations\201801021603023_adddistrictpolicestaionunion.Designer.cs">
+      <DependentUpon>201801021603023_adddistrictpolicestaionunion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Country.cs" />
@@ -188,6 +195,8 @@
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PoliceStation.cs" />
+    <Compile Include="Models\Union.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -349,6 +358,18 @@
     <Content Include="Views\Division\SaveDivision.cshtml" />
     <Content Include="Views\Division\EditDivsion.cshtml" />
     <Content Include="Views\Division\DeleteDivision.cshtml" />
+    <Content Include="Views\District\Index.cshtml" />
+    <Content Include="Views\District\SaveDistrict.cshtml" />
+    <Content Include="Views\District\EditDistrict.cshtml" />
+    <Content Include="Views\District\DeleteDistrict.cshtml" />
+    <Content Include="Views\PoliceStation\ViewAllPoliceSation.cshtml" />
+    <Content Include="Views\PoliceStation\SavePoliceStation.cshtml" />
+    <Content Include="Views\PoliceStation\EditPoliceStation.cshtml" />
+    <Content Include="Views\PoliceStation\DeletePoliceStation.cshtml" />
+    <Content Include="Views\Union\ViewAllUnion.cshtml" />
+    <Content Include="Views\Union\SaveUnion.cshtml" />
+    <Content Include="Views\Union\EditUnion.cshtml" />
+    <Content Include="Views\Union\DeleteUnion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -366,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801012221444_Division.resx">
       <DependentUpon>201801012221444_Division.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801021603023_adddistrictpolicestaionunion.resx">
+      <DependentUpon>201801021603023_adddistrictpolicestaionunion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

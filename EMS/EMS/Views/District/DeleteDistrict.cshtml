@@ -1,0 +1,31 @@
+﻿@model EMS.Models.District
+@{
+    ViewBag.Title = "DeleteDistrict";
+}
+
+<h2></h2>
+
+<hr />
+<div align="center">
+    <h3>Are you sure you want to delete this district ?</h3>
+    <hr />
+    <div>
+        @Html.DisplayFor(model => model.Division.DivisionName)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.DistrictCode)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.DistrictName)
+    </div>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> ||
+            @Html.ActionLink("Back", "Index", "District", new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

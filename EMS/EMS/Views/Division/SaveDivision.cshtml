@@ -1,0 +1,56 @@
+﻿@model EMS.Models.Division
+
+@{
+    ViewBag.Title = "SaveDivision";
+}
+
+<hr />
+
+<p>
+    @Html.ActionLink("View Division", "Index", "Division", new { @class = "btn btn-primary" })
+</p>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+                @Html.LabelFor(model => model.CountryId, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.CountryId, ViewBag.CountryId as SelectList, "Select country--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CountryId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DivisionCode, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.DivisionCode, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DivisionCode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DivisionName, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.DivisionName, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.DivisionName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-10">
+                    @Html.ActionLink("Reset", "SaveDivision", "Division", null, new { @class = "btn btn-warning" }) ||
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+   
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
