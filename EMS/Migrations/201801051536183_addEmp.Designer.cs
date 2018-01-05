@@ -7,13 +7,13 @@ namespace EMS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class addEmp : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addEmp));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801011737307_init"; }
+            get { return "201801051536183_addEmp"; }
         }
         
         string IMigrationMetadata.Source

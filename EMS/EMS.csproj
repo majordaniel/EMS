@@ -166,6 +166,7 @@
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PoliceStationController.cs" />
     <Compile Include="Controllers\UnionController.cs" />
@@ -173,29 +174,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801011737307_init.cs" />
-    <Compile Include="Migrations\201801011737307_init.Designer.cs">
-      <DependentUpon>201801011737307_init.cs</DependentUpon>
+    <Compile Include="Migrations\201801031940416_init.cs" />
+    <Compile Include="Migrations\201801031940416_init.Designer.cs">
+      <DependentUpon>201801031940416_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801011809217_emp.cs" />
-    <Compile Include="Migrations\201801011809217_emp.Designer.cs">
-      <DependentUpon>201801011809217_emp.cs</DependentUpon>
+    <Compile Include="Migrations\201801031942413_addEmployee.cs" />
+    <Compile Include="Migrations\201801031942413_addEmployee.Designer.cs">
+      <DependentUpon>201801031942413_addEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801012221444_Division.cs" />
-    <Compile Include="Migrations\201801012221444_Division.Designer.cs">
-      <DependentUpon>201801012221444_Division.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801021603023_adddistrictpolicestaionunion.cs" />
-    <Compile Include="Migrations\201801021603023_adddistrictpolicestaionunion.Designer.cs">
-      <DependentUpon>201801021603023_adddistrictpolicestaionunion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801021858432_addDepartment.cs" />
-    <Compile Include="Migrations\201801021858432_addDepartment.Designer.cs">
-      <DependentUpon>201801021858432_addDepartment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801022100251_addDesignation.cs" />
-    <Compile Include="Migrations\201801022100251_addDesignation.Designer.cs">
-      <DependentUpon>201801022100251_addDesignation.cs</DependentUpon>
+    <Compile Include="Migrations\201801051536183_addEmp.cs" />
+    <Compile Include="Migrations\201801051536183_addEmp.Designer.cs">
+      <DependentUpon>201801051536183_addEmp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -205,9 +194,7 @@
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployementStatus.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\PayGrade.cs" />
     <Compile Include="Models\PoliceStation.cs" />
     <Compile Include="Models\Union.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,6 +373,9 @@
     <Content Include="Views\Designation\SaveDesignation.cshtml" />
     <Content Include="Views\Designation\EditDesignation.cshtml" />
     <Content Include="Views\Designation\DeleteDesignation.cshtml" />
+    <Content Include="Views\Employee\ViewEmployee.cshtml" />
+    <Content Include="Views\Employee\SaveEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -395,23 +385,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801011737307_init.resx">
-      <DependentUpon>201801011737307_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801031940416_init.resx">
+      <DependentUpon>201801031940416_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801011809217_emp.resx">
-      <DependentUpon>201801011809217_emp.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801031942413_addEmployee.resx">
+      <DependentUpon>201801031942413_addEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801012221444_Division.resx">
-      <DependentUpon>201801012221444_Division.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801021603023_adddistrictpolicestaionunion.resx">
-      <DependentUpon>201801021603023_adddistrictpolicestaionunion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801021858432_addDepartment.resx">
-      <DependentUpon>201801021858432_addDepartment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801022100251_addDesignation.resx">
-      <DependentUpon>201801022100251_addDesignation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801051536183_addEmp.resx">
+      <DependentUpon>201801051536183_addEmp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
