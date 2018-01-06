@@ -77,17 +77,21 @@ namespace EMS.Models
 
         [Required(ErrorMessage = "Please input contact person name!")]
         [StringLength(50)]
+        [Display(Name = "Contact person")]
         public string ContactPerson { get; set; }
 
         [Required(ErrorMessage = "Please input contact person mobile no.!")]
         [StringLength(20)]
+        [Display(Name = "Mobile no.")]
         public string ContactMobileNo { get; set; }
 
         [Required(ErrorMessage = "Please input contact person Email!")]
         [StringLength(255)]
+        [Display(Name = "Email")]
         public string ContactEmail { get; set; }
 
         [Required(ErrorMessage = "Please select contact person relation!")]
+        [Display(Name = "Relation")]
         public Relation ContactRelation { get; set; }
 
 

@@ -186,6 +186,14 @@
     <Compile Include="Migrations\201801051536183_addEmp.Designer.cs">
       <DependentUpon>201801051536183_addEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801062309320_addSkill.cs" />
+    <Compile Include="Migrations\201801062309320_addSkill.Designer.cs">
+      <DependentUpon>201801062309320_addSkill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801062325522_addeducationexam.cs" />
+    <Compile Include="Migrations\201801062325522_addeducationexam.Designer.cs">
+      <DependentUpon>201801062325522_addeducationexam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Country.cs" />
@@ -193,9 +201,12 @@
     <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
+    <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\PoliceStation.cs" />
+    <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Union.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -242,6 +253,8 @@
     <Content Include="Content\datatables.extensions\TableTools\images\print_hover.png" />
     <Content Include="Content\datatables.extensions\TableTools\images\xls.png" />
     <Content Include="Content\datatables.extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\back_disabled.png" />
     <Content Include="Content\images\back_enabled.png" />
     <Content Include="Content\images\back_enabled_hover.png" />
@@ -255,6 +268,7 @@
     <Content Include="Content\images\sort_desc.png" />
     <Content Include="Content\images\sort_desc_disabled.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -292,6 +306,11 @@
     <Content Include="Content\datatables.extensions\TableTools\images\psd\copy document.psd" />
     <Content Include="Content\datatables.extensions\TableTools\images\psd\collection.psd" />
     <Content Include="Content\datatables.extensions\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -376,6 +395,8 @@
     <Content Include="Views\Employee\ViewEmployee.cshtml" />
     <Content Include="Views\Employee\SaveEmployee.cshtml" />
     <Content Include="Views\Employee\EditEmployee.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Shared\_EmployeeTab.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -393,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801051536183_addEmp.resx">
       <DependentUpon>201801051536183_addEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801062309320_addSkill.resx">
+      <DependentUpon>201801062309320_addSkill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801062325522_addeducationexam.resx">
+      <DependentUpon>201801062325522_addeducationexam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
