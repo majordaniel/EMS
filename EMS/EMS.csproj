@@ -280,7 +280,7 @@
     <Content Include="Content\AdminLTE\img\photo3.jpg" />
     <Content Include="Content\AdminLTE\img\photo4.jpg" />
     <Content Include="Content\AdminLTE\img\user1-128x128.jpg" />
-    <Content Include="Content\AdminLTE\img\user2-160x160.jpg" />
+    <Content Include="Content\AdminLTE\img\user2-161x161.jpg" />
     <Content Include="Content\AdminLTE\img\user3-128x128.jpg" />
     <Content Include="Content\AdminLTE\img\user4-128x128.jpg" />
     <Content Include="Content\AdminLTE\img\user5-128x128.jpg" />
@@ -348,6 +348,17 @@
     <Content Include="Content\images\sort_desc.png" />
     <Content Include="Content\images\sort_desc_disabled.png" />
     <Content Include="Content\ionicons.min.css" />
+    <Content Include="examples\404.html" />
+    <Content Include="examples\500.html" />
+    <Content Include="examples\blank.html" />
+    <Content Include="examples\index2.html" />
+    <Content Include="examples\invoice-print.html" />
+    <Content Include="examples\invoice.html" />
+    <Content Include="examples\lockscreen.html" />
+    <Content Include="examples\login.html" />
+    <Content Include="examples\pace.html" />
+    <Content Include="examples\profile.html" />
+    <Content Include="examples\register.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

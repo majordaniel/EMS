@@ -25,9 +25,12 @@ namespace EMS
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/font-awesome.min.css",
+                      "~/Content/ionicons.min.css",
+                      "~/Content/AdminLTE/css/AdminLTE.min.css",
+                      "~/Content/AdminLTE/css/AdminLTE.min.css",
+                      "~/Content/AdminLTE/css/skins/_all-skins.min.css",
                       "~/Content/css/jquery.dataTables.min.css"));
         }
     }
