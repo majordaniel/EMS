@@ -1,0 +1,26 @@
+﻿@model EMS.Models.Designation
+@{
+    ViewBag.Title = "DeleteDesignation";
+}
+<h2></h2>
+<hr />
+<div align="center">
+    <h3>Are you sure you want to delete this department ?</h3>
+    <hr />
+    <div>
+        @Html.DisplayFor(model => model.DesignationCode)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.DesignationName)
+    </div>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> ||
+            @Html.ActionLink("Back", "ViewDesignation", "Designation", new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

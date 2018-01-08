@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Qualification</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        @*<ul class="nav nav-tabs">
+            <li class="nav active">@Html.ActionLink("Skill", "ViewSkill", "Skill")</li>
+            <li class="nav navbar-link" data-toggle="tab">@Html.ActionLink("Skill", "SaveSkill", "Skill")</li>
+            <li><a data-toggle="tab" href="#menu3">Certifications</a></li>
+            <li><a data-toggle="tab" href="#menu4">Documents</a></li>
+            <li><a data-toggle="tab" href="#menu5">Language</a></li>
+        </ul>*@
+        <h2>Qualification Setup</h2>
+        <hr />
+        <div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                <li role="presentation" class="active"><a href="#staff" aria-controls="staff" role="tab" data-toggle="tab">Staff</a></li>
+                <li role="presentation"><a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Experience</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="staff">
+                    @using (Ajax.BeginForm("SaveStaff", "StaffInformation", new AjaxOptions{ UpdateTargetId = "staff" }, new { id = "form-staff" }))
+                    {
+                        Html.Partial("_SaveStaff");
+                    }
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="experience">
+                    @using (Ajax.BeginForm("SaveExperience", "StaffInformation", new AjaxOptions { UpdateTargetId = "experience"}, new { id = " form-experience" }))
+                    {
+                        Html.Partial("_SaveExperience");
+                    }
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        @*<ul class="nav nav-tabs" id="myTab">
+                <li>
+                    <a href="#one" data-toggle="tab">Skill</a>
+                </li>
+                <li>
+                    <a href="#two" data-toggle="tab">Menu 2</a>
+                </li>
+                <li>
+                    <a href="#three" data-toggle="tab">Menu 3</a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in" id="one">
+                    <div class="navbar navbar-default">
+                        @{Html.RenderAction("_ViewEducation", "Education");}
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="two">
+                    <div class="navbar navbar-default">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Two SubMenu 1</a>
+                            </li>
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Two SubMenu 2</a>
+                            </li>
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Two SubMenu 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="three">
+                    <div class="navbar navbar-default">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Three SubMenu 1</a>
+                            </li>
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Three SubMenu 2</a>
+                            </li>
+                            <li>
+                                <a href="/Home/About" data-toggle="tab">Three SubMenu 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>*@
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

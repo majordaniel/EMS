@@ -1,0 +1,54 @@
+﻿@model EMS.Models.Country
+
+@{
+    ViewBag.Title = "SaveCountry";
+}
+
+<h2>SaveCountry</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Country</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <input type="hidden" value="0" id="Id" name="Id"/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CountryCode)
+                @Html.ValidationMessageFor(model => model.CountryCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CountryName)
+                @Html.ValidationMessageFor(model => model.CountryName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" /> ||
+                @Html.ActionLink("Reset", "SaveCountry", "Country", null, new { @class = "btn btn-warning" })
+            </div>
+        </div>
+    </div>
+}
+
+<div id="saveDiv">
+    @{Html.RenderAction("_ShowCountry");}
+</div>
+
+<div id="partial"></div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

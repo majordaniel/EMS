@@ -161,14 +161,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PoliceStationController.cs" />
+    <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\UnionController.cs" />
     <Compile Include="Gateway\EMSDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,8 +199,13 @@
     <Compile Include="Migrations\201801062325522_addeducationexam.Designer.cs">
       <DependentUpon>201801062325522_addeducationexam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801072153342_addLanguageCertification.cs" />
+    <Compile Include="Migrations\201801072153342_addLanguageCertification.Designer.cs">
+      <DependentUpon>201801072153342_addLanguageCertification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Certification.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Designation.cs" />
@@ -205,6 +215,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Language.cs" />
     <Compile Include="Models\PoliceStation.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Union.cs" />
@@ -212,6 +223,75 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminLTE\css\AdminLTE.css" />
+    <Content Include="Content\AdminLTE\css\AdminLTE.min.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\AdminLTE\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-black-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-black.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-black.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-blue-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-blue.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-blue.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-green-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-green.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-green.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-purple-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-purple.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-purple.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-red-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-red.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-red.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-yellow.css" />
+    <Content Include="Content\AdminLTE\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\AdminLTE\css\skins\_all-skins.css" />
+    <Content Include="Content\AdminLTE\css\skins\_all-skins.min.css" />
+    <Content Include="Content\AdminLTE\img\avatar.png" />
+    <Content Include="Content\AdminLTE\img\avatar04.png" />
+    <Content Include="Content\AdminLTE\img\avatar2.png" />
+    <Content Include="Content\AdminLTE\img\avatar3.png" />
+    <Content Include="Content\AdminLTE\img\avatar5.png" />
+    <Content Include="Content\AdminLTE\img\boxed-bg.jpg" />
+    <Content Include="Content\AdminLTE\img\boxed-bg.png" />
+    <Content Include="Content\AdminLTE\img\credit\american-express.png" />
+    <Content Include="Content\AdminLTE\img\credit\cirrus.png" />
+    <Content Include="Content\AdminLTE\img\credit\mastercard.png" />
+    <Content Include="Content\AdminLTE\img\credit\mestro.png" />
+    <Content Include="Content\AdminLTE\img\credit\paypal.png" />
+    <Content Include="Content\AdminLTE\img\credit\paypal2.png" />
+    <Content Include="Content\AdminLTE\img\credit\visa.png" />
+    <Content Include="Content\AdminLTE\img\default-50x50.gif" />
+    <Content Include="Content\AdminLTE\img\icons.png" />
+    <Content Include="Content\AdminLTE\img\photo1.png" />
+    <Content Include="Content\AdminLTE\img\photo2.png" />
+    <Content Include="Content\AdminLTE\img\photo3.jpg" />
+    <Content Include="Content\AdminLTE\img\photo4.jpg" />
+    <Content Include="Content\AdminLTE\img\user1-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user2-160x160.jpg" />
+    <Content Include="Content\AdminLTE\img\user3-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user4-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user5-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user6-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user7-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user8-128x128.jpg" />
+    <Content Include="Content\AdminLTE\js\adminlte.js" />
+    <Content Include="Content\AdminLTE\js\adminlte.min.js" />
+    <Content Include="Content\AdminLTE\js\demo.js" />
+    <Content Include="Content\AdminLTE\js\pages\dashboard.js" />
+    <Content Include="Content\AdminLTE\js\pages\dashboard2.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -267,9 +347,11 @@
     <Content Include="Content\images\sort_both.png" />
     <Content Include="Content\images\sort_desc.png" />
     <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\ionicons.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -311,6 +393,11 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="Content\AdminLTE\css\adminlte.css.map" />
+    <Content Include="Content\AdminLTE\css\adminlte.min.css.map" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -397,6 +484,27 @@
     <Content Include="Views\Employee\EditEmployee.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Shared\_EmployeeTab.cshtml" />
+    <Content Include="Views\Skill\ViewSkill.cshtml" />
+    <Content Include="Views\Skill\SaveSkill.cshtml" />
+    <Content Include="Views\Shared\_Qualification.cshtml" />
+    <Content Include="Views\QualificationSetup\QualificationSetup.cshtml" />
+    <Content Include="Views\Shared\_SaveEducation.cshtml" />
+    <Content Include="Views\Skill\EditSkill.cshtml" />
+    <Content Include="Views\Skill\DeleteSkill.cshtml" />
+    <Content Include="Views\Education\ViewEducation.cshtml" />
+    <Content Include="Views\Education\SaveEducation.cshtml" />
+    <Content Include="Views\Education\EditEducation.cshtml" />
+    <Content Include="Views\Education\DeleteEducation.cshtml" />
+    <Content Include="Views\Exam\ViewExam.cshtml" />
+    <Content Include="Views\Exam\SaveExam.cshtml" />
+    <Content Include="Views\Language\ViewLanguage.cshtml" />
+    <Content Include="Views\Language\SaveLanguage.cshtml" />
+    <Content Include="Views\Language\EditLanguage.cshtml" />
+    <Content Include="Views\Language\DeleteLanguage.cshtml" />
+    <Content Include="Views\Certification\ViewCertificate.cshtml" />
+    <Content Include="Views\Certification\SaveCertification.cshtml" />
+    <Content Include="Views\Certification\EditCertification.cshtml" />
+    <Content Include="Views\Certification\DeleteCertification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -420,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801062325522_addeducationexam.resx">
       <DependentUpon>201801062325522_addeducationexam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801072153342_addLanguageCertification.resx">
+      <DependentUpon>201801072153342_addLanguageCertification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

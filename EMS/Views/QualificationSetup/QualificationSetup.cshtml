@@ -1,0 +1,35 @@
+﻿
+<h2>QualificationSetup</h2>
+
+
+<!DOCTYPE html>
+@{
+    ViewBag.Title = "QualificationSetup";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>QualificationSetup</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active">@Html.ActionLink("Employee", "ViewEmployee", "Employee")</li>
+                <li><a data-toggle="tab" href="~/Views/Skill/ViewSkill.cshtml">Skills</a></li>
+                <li><a data-toggle="tab" href="#menu2">Education</a></li>
+                <li><a data-toggle="tab" href="#menu3">Certifications</a></li>
+                <li><a data-toggle="tab" href="#menu4">Documents</a></li>
+                <li><a data-toggle="tab" href="#menu5">Language</a></li>
+            </ul>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
+

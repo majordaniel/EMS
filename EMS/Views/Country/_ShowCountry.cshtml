@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EMS.Models.Country>
+
+@{
+    ViewBag.Title = "_ShowCountry";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td hidden="hidden">@item.Id</td>
+            <td>
+                <input type="button" id="editRow" value="Edit" class="btn btn-link editRow"/>|
+                @*<input type="button" id="DeleteCountry" value="Delete" class="btn btn-link deleteRow"/>*@
+                <input type="button" onclick='DeleteCountry("+ item.Id +")' value="Delete" class="btn btn-link"/>
+            </td>
+        </tr>
+    }
+
+</table>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    $(function() {
+
+        $('#CountryCode').val('');
+        $('#CountryName').val('');
+
+        $('.editRow').click(function() {
+
+            $('#CountryCode').val($(this).closest('tr').find('td:eq(0)').text().trim());
+            $('#CountryName').val($(this).closest('tr').find('td:eq(1)').text().trim());
+
+            var depId = $(this).closest('tr').find('td:eq(2)').text().trim();
+            //alert(empId);
+            $("#Id").val(depId);
+            $("#btnSave").val("Edit");
+        });
+    });
+
+    function DeleteCountry(countryId) {
+        if (confirm("Do you want to delete country! ")) {
+            var data = { 'Id': countryId }
+            $.post('/Country/Delete', data,
+            function (data) {
+                if (data == true)
+                    location = location.href;
+                else
+                    alert("Could not delete");
+            });
+        }
+    }
+</script>

@@ -1,0 +1,55 @@
+﻿@model EMS.Models.PoliceStation
+@{
+    ViewBag.Title = "SavePoliceStation";
+}
+
+<h2></h2>
+<hr />
+<p>
+    @Html.ActionLink("View Policestation", "ViewAllPoliceSation", "PoliceStation", new { @class = "btn btn-primary" })
+</p>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.DistrictId, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.DistrictId, ViewBag.DistrictId as SelectList, "Select District--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DistrictId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoliceStationCode, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PoliceStationCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PoliceStationCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoliceStationName, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PoliceStationName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PoliceStationName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                @Html.ActionLink("Reset", "SavePoliceStation", "PoliceStation", null, new { @class = "btn btn-warning" }) ||
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
