@@ -4,11 +4,6 @@
     ViewBag.Title = "Details";
 }
 
-<p>
-    @Html.Partial("_EmployeeTab")
-</p>
-<br />
-<br />
 @*<div>
         <h4>Employee</h4>
         <hr />
@@ -269,6 +264,7 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>*@
+<br/>
 <div class="tab-content">
     <div class="tab-pane active" id="tabPageEmployee">
         <div id="Employee" class="reviewBlock" data-content="List" style="padding-left:5px;">

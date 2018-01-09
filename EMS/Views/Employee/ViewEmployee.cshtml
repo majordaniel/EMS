@@ -4,109 +4,107 @@
     ViewBag.Title = "ViewEmployee";
 }
 
-<h1></h1>
-<p>
-    @Html.Partial("_EmployeeTab")
-</p>
-<br/>
-<p>
-    @Html.ActionLink("Add Employee", "SaveEmployee", "Employee", new { @class = "btn btn-primary" })
-</p>
 
-<hr />
-<table id="myTable">
-    <thead>
-    <tr>
-        <th>
-            Reg. No.
-        </th>
-        <th>
-           Employee
-        </th>
-        <th>
-            Department
-        </th>
-        <th>
-            Designation
-        </th>
-        <th>
-            Gender
-        </th>
-        <th>
-            Date of Birth
-        </th>
-        <th>
-            Email
-        </th>
-        <th>
-            Mobile
-        </th>
-        <th>
-           National ID
-        </th>
-        <th>
-            Employement Status
-        </th>
-        <th>
-            Pay Grade
-        </th>
-        <th>
-           Status
-        </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeRegNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Designation.DesignationCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mobile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NationalID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployementStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PayGrade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
 
-            <td>
-                @Html.ActionLink("Edit", "EditEmployee", new {id = item.Id}) |
-                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-                @Html.ActionLink("Delete", "DeleteEmployee", new {id = item.Id})
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+<section class="content">
+    <p>
+        @Html.ActionLink("Add Employee", "SaveEmployee", "Employee", new { @class = "btn btn-primary" })
+    </p>
 
+    <hr />
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>
+                    Reg. No.
+                </th>
+                <th>
+                    Employee
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Designation
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Date of Birth
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    National ID
+                </th>
+                <th>
+                    Employement Status
+                </th>
+                <th>
+                    Pay Grade
+                </th>
+                <th>
+                    Status
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeRegNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Designation.DesignationCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NationalID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployementStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PayGrade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployee", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
