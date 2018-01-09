@@ -213,6 +213,7 @@
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeEducation.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />

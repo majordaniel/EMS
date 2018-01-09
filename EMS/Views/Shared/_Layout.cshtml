@@ -322,8 +322,8 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>@Html.ActionLink("Deignation", "ViewDesignation", "Designation", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Department", "ViewAllDepartment", "Department", null, new { @class = "fa fa-circle-o" })</li>
+                            <li><a href="@Url.Action("ViewDesignation", "Designation")"><i class="fa fa-circle-o"></i>Deignation</a></li>
+                            <li><a href="@Url.Action("ViewAllDepartment", "Department")"><i class="fa fa-circle-o"></i>Department</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -335,11 +335,11 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>@Html.ActionLink("Skill", "ViewSkill", "Skill", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Education", "ViewEducation", "Education", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Exam", "ViewExam", "Exam", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Certification", "ViewCertificate", "Certification", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Language", "ViewLanguage", "Language", null, new { @class = "fa fa-circle-o" })</li>
+                            <li><a href="@Url.Action("ViewSkill", "Skill")"><i class="fa fa-circle-o"></i>Skill</a></li>
+                            <li><a href="@Url.Action("ViewEducation","Education")"><i class="fa fa-circle-o"></i>Education</a></li>
+                            <li><a href="@Url.Action("ViewExam", "Exam")"><i class="fa fa-circle-o"></i>Exam</a></li>
+                            <li><a href="@Url.Action("ViewCertificate", "Certification")"><i class="fa fa-circle-o"></i>Certification</a></li>
+                            <li><a href="@Url.Action("ViewLanguage", "Language")"><i class="fa fa-circle-o"></i>Language</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -351,11 +351,11 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>@Html.ActionLink("Country", "Index", "Country", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Division", "Index", "Division", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("District", "Index", "District", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Policestation", "ViewAllPoliceSation", "PoliceStation", null, new { @class = "fa fa-circle-o" })</li>
-                            <li>@Html.ActionLink("Union", "ViewAllUnion", "Union", null, new { @class = "fa fa-circle-o" })</li>
+                            <li><a href="@Url.Action("Index", "Country")"><i class="fa fa-circle-o"></i>Country</a></li>
+                            <li><a href="@Url.Action("Index", "Division")"><i class="fa fa-circle-o"></i>Division</a></li>
+                            <li><a href="@Url.Action("Index", "District")"><i class="fa fa-circle-o"></i>District</a></li>
+                            <li><a href="@Url.Action("ViewAllPoliceSation", "PoliceStation")"><i class="fa fa-circle-o"></i>Policestation</a></li>
+                            <li><a href="@Url.Action("ViewAllUnion", "Union")"><i class="fa fa-circle-o"></i>Union</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -367,7 +367,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>@Html.ActionLink("Emoloyee", "ViewEmployee", "Employee", null, new { @class = "fa fa-circle-o" })</li>
+                            <li><a href="@Url.Action("ViewEmployee", "Employee")"><i class="fa fa-circle-o"></i>Employee</a></li>
                             <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i>Education</a></li>
                             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Employement history</a></li>
                             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Skill</a></li>
@@ -670,12 +670,10 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
     <script src="~/Content/AdminLTE/js/adminlte.min.js"></script>
     <script src="~/Content/AdminLTE/js/pages/dashboard2.js"></script>
     <script src="~/Content/AdminLTE/js/demo.js"></script>
-
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 
