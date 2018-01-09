@@ -3,52 +3,47 @@
 @{
     ViewBag.Title = "SaveCountry";
 }
+<br />
+<section class="content" style="background-color: #ffffff; width: 700px;">
 
-<h2>SaveCountry</h2>
+    <p>
+        @Html.ActionLink("View Country", "Index", "Country", new { @class = "btn btn-primary" })
+    </p>
+    <br />
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Country</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        <input type="hidden" value="0" id="Id" name="Id"/>
-        <div class="form-group">
-            @Html.LabelFor(model => model.CountryCode, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CountryCode)
-                @Html.ValidationMessageFor(model => model.CountryCode)
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <input type="hidden" value="0" id="Id" name="Id" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.CountryCode, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.CountryCode, new{@class="form-control"})
+                    @Html.ValidationMessageFor(model => model.CountryCode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CountryName, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.CountryName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CountryName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-10">
+                    @Html.ActionLink("Reset", "SaveCountry", "Country", null, new { @class = "btn btn-warning" }) ||
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CountryName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CountryName)
-                @Html.ValidationMessageFor(model => model.CountryName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success" /> ||
-                @Html.ActionLink("Reset", "SaveCountry", "Country", null, new { @class = "btn btn-warning" })
-            </div>
-        </div>
-    </div>
-}
-
-<div id="saveDiv">
-    @{Html.RenderAction("_ShowCountry");}
-</div>
-
-<div id="partial"></div>
-
-
-
+    }
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

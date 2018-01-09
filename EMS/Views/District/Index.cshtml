@@ -4,60 +4,56 @@
     ViewBag.Title = "Index";
 }
 
-<h2>District List</h2>
+<br />
+<section class="content" style="background-color: #ffffff;">
 
-<hr />
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
-<p>
-    @Html.ActionLink("Add District", "SaveDistrict", "District", new { @class = "btn btn-primary" })
-</p>
-<hr />
+    <p>
+        @Html.ActionLink("Add District", "SaveDistrict", "District", new { @class = "btn btn-primary" })
+    </p>
+    <hr />
 
-<table id="myTable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Division.DivisionName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DistrictCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DistrictName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table id="myTable">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Division.DivisionName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DistrictCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DistrictName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditDistrict", new { id = item.Id }) ||
-                    @Html.ActionLink("Delete", "DeleteDistrict", new { id = item.Id })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Division.DivisionName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DistrictCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DistrictName)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Division.DivisionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DistrictCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DistrictName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditDistrict", new { id = item.Id }) ||
+                        @Html.ActionLink("Delete", "DeleteDistrict", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#myTable').DataTable();
         });
     </script>
-
 }

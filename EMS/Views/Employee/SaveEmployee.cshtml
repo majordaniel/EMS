@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "SaveEmployee";
 }
-<section class="content">
+
+<br />
+<section class="content" style="background-color: #ffffff; width: 800px;">
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         <div class="form-horizontal">
-            <p>
-                @Html.ActionLink("View Employee", "ViewEmployee", "Employee", new { @class = "btn btn-primary" })
-            </p>
             @Html.ValidationSummary(true)
             <div class="form-group form-group-sm">
                 <div class="col-sm-6">
@@ -263,16 +263,15 @@
                 <!-- Test Contact End -->
             </div>
             <!-- End contact information -->
-        </div>
-        <br />
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success" /> ||
-                @Html.ActionLink("Reset", "SaveEmployee", "Employee", null, new { @class = "btn btn-warning" })
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-10">
+                    @Html.ActionLink("View", "ViewEmployee", "Employee", new { @class = "btn btn-primary" }) ||
+                    @Html.ActionLink("Reset", "SaveEmployee", "Employee", null, new {@class = "btn btn-warning"}) ||
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                </div>
             </div>
         </div>
-
-
     }
 </section>
 @section Scripts {

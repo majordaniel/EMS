@@ -4,20 +4,20 @@
     ViewBag.Title = "SaveDivision";
 }
 
-<hr />
+<br />
+<section class="content" style="background-color: #ffffff; width: 700px;">
 
-<p>
-    @Html.ActionLink("View Division", "Index", "Division", new { @class = "btn btn-primary" })
-</p>
-<hr />
+    <p>
+        @Html.ActionLink("View Division", "Index", "Division", new { @class = "btn btn-primary" })
+    </p>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
-        <div class="form-group">
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="form-group">
                 @Html.LabelFor(model => model.CountryId, new { @class = "control-label col-md-4" })
                 <div class="col-md-4">
                     @Html.DropDownListFor(model => model.CountryId, ViewBag.CountryId as SelectList, "Select country--", new { @class = "form-control" })
@@ -36,7 +36,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DivisionName, new { @class = "control-label col-md-4" })
                 <div class="col-md-4">
-                    @Html.TextBoxFor(model => model.DivisionName, new { @class = "form-control"})
+                    @Html.TextBoxFor(model => model.DivisionName, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.DivisionName)
                 </div>
             </div>
@@ -48,9 +48,9 @@
                 </div>
             </div>
         </div>
-   
-}
 
+    }
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

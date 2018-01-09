@@ -3,25 +3,27 @@
     ViewBag.Title = "DeleteEducation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br />
+<section class="content" style="background-color: #ffffff; width: 700px;">
 
-<hr/>
-<div align="center">
-    <h3>Are you sure you want to delete this education ?</h3>
-    <hr />
-    <div>
-        @Html.DisplayFor(model => model.EducationName)
-    </div>
-    <div>
-        @Html.DisplayFor(model => model.Description)
-    </div>
-    <hr />
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> ||
-            @Html.ActionLink("Back", "ViewEducation", "Education", new { @class = "btn btn-primary" })
+    <div align="center">
+        <h3>Are you sure you want to delete this education ?</h3>
+        <hr />
+        <div>
+            @Html.DisplayFor(model => model.EducationName)
         </div>
-    }
-</div>
+        <div>
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> ||
+                @Html.ActionLink("Back", "ViewEducation", "Education", new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+</section>

@@ -3,43 +3,44 @@
     ViewBag.Title = "EditEducation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<hr />
-<p>
-    @Html.ActionLink("View Education", "ViewEducation", "Education", new { @class = "btn btn-primary" })
-</p>
 <br />
-<br />
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.EducationName, new { @class = "control-label col-md-4" })
-            <div class="col-md-4">
-                @Html.TextBoxFor(model => model.EducationName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EducationName)
+<section class="content" style="background-color: #ffffff; width: 700px;">
+
+    <p>
+        @Html.ActionLink("View Education", "ViewEducation", "Education", new { @class = "btn btn-primary" })
+    </p>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.EducationName, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.EducationName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EducationName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-10">
+                    @Html.ActionLink("Reset", "SaveEducation", "Education", null, new { @class = "btn btn-warning" }) ||
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-4" })
-            <div class="col-md-4">
-                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-10">
-                @Html.ActionLink("Reset", "SaveEducation", "Education", null, new { @class = "btn btn-warning" }) ||
-                <input type="submit" value="Save" class="btn btn-success" />
-            </div>
-        </div>
-    </div>
-}
-
+    }
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

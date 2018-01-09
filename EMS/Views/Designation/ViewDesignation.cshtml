@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "ViewDesignation";
 }
-<section class="content">
+<br />
+<section class="content" style="background-color: #ffffff;">
     <p>
         @Html.ActionLink("Add Designation", "SaveDesignation", "Designation", new { @class = "btn btn-primary" })
     </p>
@@ -43,7 +44,7 @@
 </section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-   <script>
+    <script>
         $(document).ready(function () {
             $('#myTable').DataTable();
         });

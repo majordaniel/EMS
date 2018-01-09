@@ -3,28 +3,30 @@
     ViewBag.Title = "DeleteUnion";
 }
 
-<h2></h2>
-<hr />
-<div align="center">
-    <h3>Are you sure you want to delete this district ?</h3>
-    <hr />
-    <div>
-        @Html.DisplayFor(model => model.PoliceStation.PoliceStationName)
-    </div>
-    <div>
-        @Html.DisplayFor(model => model.UnionCode)
-    </div>
-    <div>
-        @Html.DisplayFor(model => model.UnionName)
-    </div>
-    <hr />
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+<br />
+<section class="content" style="background-color: #ffffff; width: 700px;">
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> ||
-            @Html.ActionLink("Back", "ViewAllUnion", "Union", new { @class = "btn btn-primary" })
+    <div align="center">
+        <h3>Are you sure you want to delete this district ?</h3>
+        <hr />
+        <div>
+            @Html.DisplayFor(model => model.PoliceStation.PoliceStationName)
         </div>
-    }
-</div>
+        <div>
+            @Html.DisplayFor(model => model.UnionCode)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.UnionName)
+        </div>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> ||
+                @Html.ActionLink("Back", "ViewAllUnion", "Union", new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+</section>

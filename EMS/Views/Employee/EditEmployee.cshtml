@@ -3,282 +3,278 @@
     ViewBag.Title = "EditEmployee";
 }
 
-<hr />
-
-<p>
-    @Html.Partial("_EmployeeTab")
-</p>
-<br/>
-<br/>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
-        <div class="form-group form-group-sm">
-            <!-- left column -->
-            <div class="col-sm-6">
-                <fieldset>
-                    <legend>Employee Basic Info</legend>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EmployeeName, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.EmployeeName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.EmployeeName)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.FathersName, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.FathersName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.FathersName)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.MothersName, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.MothersName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.MothersName)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.MaritalStatus, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.EnumDropDownListFor(model => model.MaritalStatus, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.MaritalStatus)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.SpouseName, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.SpouseName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.SpouseName)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Gender, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.EnumDropDownListFor(model => model.Gender, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Gender)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.BirthDate, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control", @type = "date" })
-                            @Html.ValidationMessageFor(model => model.BirthDate)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.BloodGroup, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.EnumDropDownListFor(model => model.BloodGroup, new { @class = "form-control", placeholder = "Select Blood group" })
-                            @Html.ValidationMessageFor(model => model.BloodGroup)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Religion, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.EnumDropDownListFor(model => model.Religion, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Religion)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Mobile, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Mobile)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Email)
-                        </div>
-                    </div>
-                </fieldset>
-                @*<p class="lead">Employee Contact Info:</p>*@
-                <fieldset>
-                    <legend>Employee Contact Info</legend>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ContactPerson, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.ContactPerson, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.ContactPerson)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ContactMobileNo, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.ContactMobileNo, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.ContactMobileNo)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ContactEmail, new { @class = "col-sm-2 control-label" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.ContactEmail, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.ContactPerson)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ContactRelation, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.EnumDropDownListFor(model => model.ContactRelation, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.ContactRelation)
-                        </div>
-                    </div>
-
-                </fieldset>
-
-            </div>
-            <!-- right column -->
-            <div class="col-sm-6">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Nationality, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.Nationality, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Nationality)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NationalID, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.NationalID, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.NationalID)
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>Employee Address</legend>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.HouseNo, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.HouseNo, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.HouseNo)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.RoadNo, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.RoadNo, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.RoadNo)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Village, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.Village, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Village)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CountryId, new { @class = "control-label col-md-2" })
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.CountryId, ViewBag.CountryId as SelectList, "Select country--", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.CountryId)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.DivisionId, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.DivisionId, new SelectList(" "), "Select Division--", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.DivisionId)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.DistrictId, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.DistrictId, new SelectList(" "), "Select District--", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.DistrictId)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PoliceStationId, new { @class = "control-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.PoliceStationId, new SelectList(" "), "Select Policestation--", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.PoliceStationId)
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.UnionId, new { @class = "control-label col-md-2" })
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.UnionId, new SelectList(" "), "Select Union--", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.UnionId)
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PostalCode, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.PostalCode)
-                    </div>
-                </div>
-                <div class="form-group form-group-sm">
-                    @Html.LabelFor(model => model.JoiningDate, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.JoiningDate, new { @class = "form-control", @type = "date" })
-                        @Html.ValidationMessageFor(model => model.JoiningDate)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.EmployementStatus, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.EnumDropDownListFor(model => model.EmployementStatus, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.EmployementStatus)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PayGrade, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.EnumDropDownListFor(model => model.PayGrade, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.PayGrade)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DepartmentId, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.DropDownListFor(model => model.DepartmentId, ViewBag.DepartmentId as SelectList, "Select department--", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.DepartmentId)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DesignationId, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.DropDownListFor(model => model.DesignationId, ViewBag.DesignationId as SelectList, "Select designation--", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.DesignationId)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Status, new { @class = "control-label col-sm-2" })
-                    <div class="col-sm-10">
-                        @Html.EnumDropDownListFor(model => model.Status, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Status)
-                    </div>
-                </div>
-                @*<div class="form-group"><div class="col-sm-10"></div></div>
-                    <div class="form-group"><div class="col-sm-10"></div></div>
-                    <div class="form-group"><div class="col-sm-10"></div></div>*@
-            </div>
-
-
-            <!-- Test Contact End -->
-        </div>
-        <!-- End contact information -->
-    </div>
+<br />
+<section class="content" style="background-color: #ffffff; width: 800px;">
     <br />
-    <div class="form-group">
-        <div class="col-md-offset-4 col-md-10">
-            <input type="submit" value="Save" class="btn btn-success" /> ||
-            @Html.ActionLink("Reset", "SaveEmployee", "Employee", null, new { @class = "btn btn-warning" })
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="form-group form-group-sm">
+                <!-- left column -->
+                <div class="col-sm-6">
+                    <fieldset>
+                        <legend>Employee Basic Info</legend>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmployeeName, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.EmployeeName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.EmployeeName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FathersName, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.FathersName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.FathersName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MothersName, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.MothersName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.MothersName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MaritalStatus, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.EnumDropDownListFor(model => model.MaritalStatus, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.MaritalStatus)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SpouseName, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.SpouseName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SpouseName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.EnumDropDownListFor(model => model.Gender, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Gender)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BirthDate, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.BirthDate)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BloodGroup, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.EnumDropDownListFor(model => model.BloodGroup, new { @class = "form-control", placeholder = "Select Blood group" })
+                                @Html.ValidationMessageFor(model => model.BloodGroup)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Religion, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.EnumDropDownListFor(model => model.Religion, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Religion)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Mobile, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Mobile)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+                    </fieldset>
+                    @*<p class="lead">Employee Contact Info:</p>*@
+                    <fieldset>
+                        <legend>Employee Contact Info</legend>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContactPerson, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.ContactPerson, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ContactPerson)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContactMobileNo, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.ContactMobileNo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ContactMobileNo)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContactEmail, new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.ContactEmail, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ContactPerson)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContactRelation, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.EnumDropDownListFor(model => model.ContactRelation, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ContactRelation)
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                </div>
+                <!-- right column -->
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nationality, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.Nationality, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Nationality)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NationalID, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.NationalID, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.NationalID)
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Employee Address</legend>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HouseNo, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.HouseNo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.HouseNo)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RoadNo, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.RoadNo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.RoadNo)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Village, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Village, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Village)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CountryId, new { @class = "control-label col-md-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.CountryId, ViewBag.CountryId as SelectList, "Select country--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CountryId)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DivisionId, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.DivisionId, new SelectList(" "), "Select Division--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DivisionId)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DistrictId, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.DistrictId, new SelectList(" "), "Select District--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DistrictId)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PoliceStationId, new { @class = "control-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.PoliceStationId, new SelectList(" "), "Select Policestation--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PoliceStationId)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UnionId, new { @class = "control-label col-md-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.UnionId, new SelectList(" "), "Select Union--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.UnionId)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PostalCode, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PostalCode)
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        @Html.LabelFor(model => model.JoiningDate, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.JoiningDate, new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.JoiningDate)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployementStatus, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.EnumDropDownListFor(model => model.EmployementStatus, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.EmployementStatus)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PayGrade, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.EnumDropDownListFor(model => model.PayGrade, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PayGrade)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DepartmentId, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.DepartmentId, ViewBag.DepartmentId as SelectList, "Select department--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DepartmentId)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DesignationId, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.DesignationId, ViewBag.DesignationId as SelectList, "Select designation--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DesignationId)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Status, new { @class = "control-label col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.EnumDropDownListFor(model => model.Status, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Status)
+                        </div>
+                    </div>
+                    @*<div class="form-group"><div class="col-sm-10"></div></div>
+                        <div class="form-group"><div class="col-sm-10"></div></div>
+                        <div class="form-group"><div class="col-sm-10"></div></div>*@
+                </div>
+
+
+                <!-- Test Contact End -->
+            </div>
+            <!-- End contact information -->
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-10">
+                    @Html.ActionLink("View", "ViewEmployee", "Employee", new { @class = "btn btn-primary" }) ||
+                    @Html.ActionLink("Reset", "SaveEmployee", "Employee", null, new { @class = "btn btn-warning" }) ||
+                    <input type="submit" value="Edit" class="btn btn-success" />
+                </div>
+            </div>
         </div>
-    </div>
 
-
-}
-
+    }
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 

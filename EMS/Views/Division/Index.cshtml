@@ -2,52 +2,52 @@
 
 @{
     ViewBag.Title = "Index";
-    
+
 }
+<br/>
+<section class="content" style="background-color: #ffffff;">
 
-<h2>Division List</h2>
-<hr/>
-<p>
-    @Html.ActionLink("Add Division", "SaveDivision", "Division", new {@class = "btn btn-primary"})
-</p>
-<hr/>
-<table id="myTable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Country.CountryCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DivisionCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DivisionName)
-            </th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <p>
+        @Html.ActionLink("Add Division", "SaveDivision", "Division", new { @class = "btn btn-primary" })
+    </p>
+    <hr />
+    <table id="myTable">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Country.CountryCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DivisionCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DivisionName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditDivsion", new { id = item.Id }) ||
-                    @Html.ActionLink("Delete", "DeleteDivision", new { id = item.Id })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country.CountryCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DivisionCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DivisionName)
+                </th>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country.CountryCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DivisionCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DivisionName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditDivsion", new { id = item.Id }) ||
+                        @Html.ActionLink("Delete", "DeleteDivision", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
@@ -55,5 +55,4 @@
             $('#myTable').DataTable();
         });
     </script>
-
 }

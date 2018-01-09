@@ -3,43 +3,45 @@
     ViewBag.Title = "ViewCertificate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<hr/>
-<h2 align="right">Total=@ViewBag.CertificationCount</h2>
-<p>
-    @Html.ActionLink("Add Certificate", "SaveCertification", "Certification", new {@class = "btn btn-primary"})
-</p>
-<br/>
-<table id="myTable" class="table table-hover table-responsive table-condensed table-striped">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CertificationName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<br />
+<section class="content" style="background-color: #ffffff;">
+
+    <p>
+        @Html.ActionLink("Add Certificate", "SaveCertification", "Certification", new { @class = "btn btn-primary" })
+    </p>
+    <br />
+    <table id="myTable" class="table table-hover table-responsive table-condensed table-striped">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CertificationName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditCertification", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "DeleteCertification", new { id = item.Id })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CertificationName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CertificationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditCertification", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteCertification", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
@@ -47,5 +49,4 @@
             $('#myTable').DataTable();
         });
     </script>
-
 }
