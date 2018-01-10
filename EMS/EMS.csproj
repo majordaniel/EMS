@@ -219,6 +219,7 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeEducation.cs" />
+    <Compile Include="Models\EmploymentHistory.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />

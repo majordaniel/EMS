@@ -36,14 +36,14 @@ namespace EMS.Models
         [Required(ErrorMessage = "Please set from date!")]
         [Display(Name = "From")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 
         public DateTime FromDate { get; set; }
 
         [Required(ErrorMessage = "Please set to date!")]
         [Display(Name = "To")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ToDate { get; set; }
 
 
@@ -67,4 +67,6 @@ namespace EMS.Models
         [ForeignKey("ExamId")]
         public virtual Exam Exam { get; set; }
     }
+
+    
 }
