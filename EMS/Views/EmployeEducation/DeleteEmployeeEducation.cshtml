@@ -1,0 +1,100 @@
+﻿@model EMS.Models.EmployeEducation
+
+@{
+    ViewBag.Title = "DeleteEmployeeEducation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<section class="content" style="background-color: #ffffff; width: 700px;">
+
+
+    <div align="center">
+        <h3>Are you sure you want to delete this?</h3>
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education.EducationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education.EducationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exam.ExamName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam.ExamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassingYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassingYear)
+        </dd>
+
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> ||
+                @Html.ActionLink("Back", "ViewEmployeeEducation", "EmployeEducation", new { @class = "btn btn-primary" })
+            </div>}
+    </div>
+</section>

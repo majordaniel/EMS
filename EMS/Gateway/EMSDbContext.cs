@@ -28,6 +28,7 @@ namespace EMS.Gateway
         public DbSet<Exam> Exams { get; set; }
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<EmployeEducation> EmployeEducations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -13,7 +13,8 @@ namespace EMS
                         "~/Scripts/jquery.dataTables.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                       "~/Scripts/jquery.validate*",
+                       "~/Scripts/jquery.validate.unobtrusive.min.js*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -22,6 +23,8 @@ namespace EMS
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-datepicker.min.js",
+
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -29,8 +32,8 @@ namespace EMS
                       "~/Content/font-awesome.min.css",
                       "~/Content/ionicons.min.css",
                       "~/Content/AdminLTE/css/AdminLTE.min.css",
-                      "~/Content/AdminLTE/css/AdminLTE.min.css",
                       "~/Content/AdminLTE/css/skins/_all-skins.min.css",
+                      "~/Content/bootstrap-datepicker.min.css",
                       "~/Content/css/jquery.dataTables.min.css"));
         }
     }

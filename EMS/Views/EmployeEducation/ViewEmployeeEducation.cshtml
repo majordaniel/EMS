@@ -1,0 +1,96 @@
+﻿@model IEnumerable<EMS.Models.EmployeEducation>
+
+@{
+    ViewBag.Title = "ViewEmployeeEducation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<section class="content" style="background-color: #ffffff;">
+    <p>
+        <a class="btn btn-sm btn-primary" href="@Url.Action("SaveEmployeeEducation","EmployeEducation")">Add New <i class="fa fa-plus"></i></a>
+    </p>
+    <br />
+    <table id="myTable" class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee.EmployeeRegNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Education.EducationName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Exam.ExamName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InstituteName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ToDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PassingYear)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.EmployeeRegNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Education.EducationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Exam.ExamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InstituteName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FromDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ToDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PassingYear)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployeeEducation", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteEmployeeEducation", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}

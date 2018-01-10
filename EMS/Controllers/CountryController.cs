@@ -40,6 +40,48 @@ namespace EMS.Controllers
             return View(country);
         }
 
+
+        // GET: /Division/Edit/5
+        public ActionResult EditCountry(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Country country = db.Countries.Find(id);
+            if (country == null)
+            {
+                return HttpNotFound();
+            }
+            //ViewBag.CountryId = new SelectList(db.Countries, "Id", "CountryCode", division.CountryId);
+            return View(country);
+        }
+
+        // POST: /Division/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCountry(Country country)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(country).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //ViewBag.CountryId = new SelectList(db.Countries, "Id", "CountryCode", division.CountryId);
+            return View(country);
+        }
+
+
+
+
+
+
+
+
+
         public JsonResult Delete(int? id)
         {
             EMSDbContext db = new EMSDbContext();

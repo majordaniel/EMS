@@ -3,19 +3,20 @@
     ViewBag.Title = "SaveDesignation";
 }
 <br />
+
 <section class="content" style="width: 700px;">
     <br />
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
-        <div class="panel-group">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Save Designation
-                </div>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Save Designation
+                    </div>
                     <br />
                     <div class="form-group">
                         @Html.LabelFor(model => model.DesignationCode, new { @class = "control-label col-md-4" })
@@ -35,19 +36,14 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-4 col-md-10">
-                            @Html.ActionLink("View", "ViewDesignation", "Designation", new { @class = "btn btn-primary" }) ||
+                            <input type="submit" value="Save" class="btn btn-success" /> ||
                             @Html.ActionLink("Reset", "SaveDesignation", "Designation", null, new { @class = "btn btn-warning" }) ||
-                            <input type="submit" value="Save" class="btn btn-success" />
+                            @Html.ActionLink("View", "ViewDesignation", "Designation", new { @class = "btn btn-primary" })
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    
-
-
-
-
     }
 </section>
 @section Scripts {
