@@ -36,14 +36,13 @@ namespace EMS.Models
         [Required(ErrorMessage = "Please set from date!")]
         [Display(Name = "From")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime FromDate { get; set; }
 
         [Required(ErrorMessage = "Please set to date!")]
         [Display(Name = "To")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ToDate { get; set; }
 
 

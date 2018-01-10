@@ -1,0 +1,107 @@
+﻿@model EMS.Models.EmploymentHistory
+
+@{
+    ViewBag.Title = "DeleteEmploymentHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<section class="content" style=" width: 700px;">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Delete Employment History</h4>
+            </div>
+            <div align="center">
+                <h3>Are you sure you want to delete this?</h3>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Department.DepartmentCode)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Department.DepartmentCode)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Designation.DesignationCode)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Designation.DesignationCode)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee.EmployeeName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CompanyName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CompanyLocation)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CompanyLocation)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmploymentFromDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmploymentFromDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsCurrentEmployee)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsCurrentEmployee)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmploymentToDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmploymentToDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Responsibilities)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Responsibilities)
+                </dd>
+
+
+                <br/>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger"/> ||
+                        @Html.ActionLink("Back", "ViewEmploymentHistory", "EmploymentHistory", new {@class = "btn btn-primary"})
+                    </div>
+                }
+                <br/>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -37,7 +37,7 @@ namespace EMS.Models
         [Required(ErrorMessage = "Please set from date!")]
         [Display(Name = "Employment From")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EmploymentFromDate { get; set; }
 
         [Display(Name = "Is Current Employee?")]
@@ -45,9 +45,9 @@ namespace EMS.Models
         public IsAct IsCurrentEmployee { get; set; }
 
         [Required(ErrorMessage = "Please set to date!")]
-        [Display(Name = "EMployment To")]
+        [Display(Name = "Employment To")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EmploymentToDate { get; set; }
 
         [Required(ErrorMessage = "Please input responsibilities")]

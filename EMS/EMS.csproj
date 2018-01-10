@@ -170,6 +170,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeEducationController.cs" />
+    <Compile Include="Controllers\EmploymentHistoryController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -211,6 +212,10 @@
     <Compile Include="Migrations\201801101841264_addEmploymentHistory.cs" />
     <Compile Include="Migrations\201801101841264_addEmploymentHistory.Designer.cs">
       <DependentUpon>201801101841264_addEmploymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801102048447_updateEmploymentHistory.cs" />
+    <Compile Include="Migrations\201801102048447_updateEmploymentHistory.Designer.cs">
+      <DependentUpon>201801102048447_updateEmploymentHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -741,6 +746,10 @@
     <Content Include="Views\EmployeEducation\ViewEmployeeEducation.cshtml" />
     <Content Include="Views\EmployeEducation\EditEmployeeEducation.cshtml" />
     <Content Include="Views\EmployeEducation\DeleteEmployeeEducation.cshtml" />
+    <Content Include="Views\EmploymentHistory\ViewEmploymentHistory.cshtml" />
+    <Content Include="Views\EmploymentHistory\SaveEmploymentHistory.cshtml" />
+    <Content Include="Views\EmploymentHistory\EditEmploymentHistory.cshtml" />
+    <Content Include="Views\EmploymentHistory\DeleteEmploymentHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -773,6 +782,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801101841264_addEmploymentHistory.resx">
       <DependentUpon>201801101841264_addEmploymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801102048447_updateEmploymentHistory.resx">
+      <DependentUpon>201801102048447_updateEmploymentHistory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
