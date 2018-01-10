@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201801100341505_addEmployeeEdu.Designer.cs">
       <DependentUpon>201801100341505_addEmployeeEdu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801101841264_addEmploymentHistory.cs" />
+    <Compile Include="Migrations\201801101841264_addEmploymentHistory.Designer.cs">
+      <DependentUpon>201801101841264_addEmploymentHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Certification.cs" />
@@ -766,6 +770,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801100341505_addEmployeeEdu.resx">
       <DependentUpon>201801100341505_addEmployeeEdu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801101841264_addEmploymentHistory.resx">
+      <DependentUpon>201801101841264_addEmploymentHistory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

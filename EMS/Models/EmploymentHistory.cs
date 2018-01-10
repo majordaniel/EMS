@@ -41,13 +41,13 @@ namespace EMS.Models
         public DateTime EmploymentFromDate { get; set; }
 
         [Display(Name = "Is Current Employee?")]
+        [Range(1, int.MaxValue, ErrorMessage = "Select if your're current employee or not!")]
         public IsAct IsCurrentEmployee { get; set; }
 
         [Required(ErrorMessage = "Please set to date!")]
         [Display(Name = "EMployment To")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-
         public DateTime EmploymentToDate { get; set; }
 
         [Required(ErrorMessage = "Please input responsibilities")]
@@ -71,8 +71,8 @@ namespace EMS.Models
     public enum IsAct
     {
         [Display(Name = "Yes")]
-        True,
+        True=1,
         [Display(Name = "No")]
-        False
+        False=2,
     }
 }
