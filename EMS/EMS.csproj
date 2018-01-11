@@ -170,6 +170,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeEducationController.cs" />
+    <Compile Include="Controllers\EmployeeTrainingHistoryController.cs" />
     <Compile Include="Controllers\EmploymentHistoryController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -755,6 +756,10 @@
     <Content Include="Views\EmploymentHistory\SaveEmploymentHistory.cshtml" />
     <Content Include="Views\EmploymentHistory\EditEmploymentHistory.cshtml" />
     <Content Include="Views\EmploymentHistory\DeleteEmploymentHistory.cshtml" />
+    <Content Include="Views\EmployeeTrainingHistory\ViewTrainingHistory.cshtml" />
+    <Content Include="Views\EmployeeTrainingHistory\SaveTrainingHistory.cshtml" />
+    <Content Include="Views\EmployeeTrainingHistory\EditTrainingHistory.cshtml" />
+    <Content Include="Views\EmployeeTrainingHistory\DeleteTrainingHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

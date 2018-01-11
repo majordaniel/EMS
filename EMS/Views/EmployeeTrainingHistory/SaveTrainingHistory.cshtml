@@ -1,0 +1,164 @@
+﻿@model EMS.Models.EmployeeTrainingHistory
+
+@{
+    ViewBag.Title = "SaveTrainingHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+<section class="content" style="width: 800px;">
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Save Training History</h4>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.EmployeeId, ViewBag.EmployeeId as SelectList, "Select Employee Reg.No.", new { @class = "form-control", @id = "EmployeeId" })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!----Start Show Area---->
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Employee Name</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Name" name="name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Employee Email</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Email" name="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Employee NID</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="NID" name="NID" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Employee Department</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Department" name="Department" />
+                        </div>
+                    </div>
+                    <!----End Show Area---->
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainingTitle, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TrainingTitle, new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.TrainingTitle, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainingTopic, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TrainingTopic, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TrainingTopic, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainingInstitute, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TrainingInstitute,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.TrainingInstitute, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IstituteLocation, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.IstituteLocation,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.IstituteLocation, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.InstituteCountry, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.InstituteCountry,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.InstituteCountry, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainingYear, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TrainingYear,new{@class="form-control",@id="year",@readonly=true})
+                            @Html.ValidationMessageFor(model => model.TrainingYear, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainingDuration, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TrainingDuration,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.TrainingDuration, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-success" /> ||
+                            @Html.ActionLink("Reset", "SaveTrainingHistory", "EmployeeTrainingHistory", null, new { @class = "btn btn-warning" }) ||
+                            @Html.ActionLink("View", "ViewTrainingHistory", "EmployeeTrainingHistory", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(function () {
+            $("#EmployeeId").change(function () {
+                //  alert($(this).val() + " " + $(this).find("option:selected").html());
+                var emId = $(this).val();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetEmployeeInfoById", "EmployeEducation")',
+                    data: '{employeeId: "' + emId + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        //alert(data.LastName);
+                        $("#Name").val(data.name);
+                        $("#Email").val(data.email);
+                        $("#NID").val(data.nid);
+                        $("#Department").val(data.department.DepartmentName);
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve counties.');
+                    }
+                });
+
+            });
+        });
+        //This Section End
+
+        //Year picker
+        //Year picker start
+        $('#year').datepicker({
+            minViewMode: 2,
+            format: 'yyyy'
+        });
+    </script>
+}

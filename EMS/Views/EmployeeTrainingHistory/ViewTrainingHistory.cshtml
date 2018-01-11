@@ -1,0 +1,88 @@
+﻿@model IEnumerable<EMS.Models.EmployeeTrainingHistory>
+
+@{
+    ViewBag.Title = "ViewTrainingHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content" style="background-color: #ffffff;">
+    <p>
+        <a class="btn btn-sm btn-primary" href="@Url.Action("SaveTrainingHistory", "EmployeeTrainingHistory")">Add New <i class="fa fa-plus"></i></a>
+    </p>
+    <br />
+    <table id="myTable" class="table table-hover table-responsive table-striped table-condensed">
+        <thead>
+        <tr>
+            <th>
+               Employee
+            </th>
+            <th>
+               Title
+            </th>
+            <th>
+                Topic Covered
+            </th>
+            <th>
+                Institute
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                Duration
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.EmployeeRegNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainingTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainingTopic)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainingInstitute)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IstituteLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InstituteCountry)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainingYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainingDuration)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditTrainingHistory", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteTrainingHistory", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            </tbody>
+    </table>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
