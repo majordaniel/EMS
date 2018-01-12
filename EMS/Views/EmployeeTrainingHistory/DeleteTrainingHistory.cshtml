@@ -1,0 +1,98 @@
+﻿@model EMS.Models.EmployeeTrainingHistory
+
+@{
+    ViewBag.Title = "DeleteTrainingHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<section class="content" style=" width: 700px;">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Delete Employment History</h4>
+            </div>
+            <div align="center">
+                <h3>Are you sure you want to delete this?</h3>
+                <br />
+                <dl>
+                    <dt>
+                        Employee
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Employee.EmployeeRegNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrainingTitle)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrainingTitle)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrainingTopic)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrainingTopic)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrainingInstitute)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrainingInstitute)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IstituteLocation)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.IstituteLocation)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.InstituteCountry)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.InstituteCountry)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrainingYear)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrainingYear)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrainingDuration)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrainingDuration)
+                    </dd>
+
+                    <br/>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger"/> |
+                            @Html.ActionLink("Back", "ViewTrainingHistory", "EmployeeTrainingHistory", new {@class = "btn btn-primary"})
+                        </div>
+                    }
+                    <br/>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>

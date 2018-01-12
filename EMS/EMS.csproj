@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201801111408259_addEmployeeTrainingHistory.Designer.cs">
       <DependentUpon>201801111408259_addEmployeeTrainingHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801122232299_addEmployeeSkill.cs" />
+    <Compile Include="Migrations\201801122232299_addEmployeeSkill.Designer.cs">
+      <DependentUpon>201801122232299_addEmployeeSkill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Certification.cs" />
@@ -233,6 +237,7 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeEducation.cs" />
+    <Compile Include="Models\EmployeeSkill.cs" />
     <Compile Include="Models\EmployeeTrainingHistory.cs" />
     <Compile Include="Models\EmploymentHistory.cs" />
     <Compile Include="Models\Exam.cs" />
@@ -798,6 +803,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801111408259_addEmployeeTrainingHistory.resx">
       <DependentUpon>201801111408259_addEmployeeTrainingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801122232299_addEmployeeSkill.resx">
+      <DependentUpon>201801122232299_addEmployeeSkill.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -31,6 +31,8 @@ namespace EMS.Gateway
         public DbSet<EmployeEducation> EmployeEducations { get; set; }
         public DbSet<EmploymentHistory> EmploymentHistories { get; set; }
         public DbSet<EmployeeTrainingHistory> EmployeeTrainingHistories { get; set; }
+        public DbSet<EmployeeSkill> EmployeeSkills { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
