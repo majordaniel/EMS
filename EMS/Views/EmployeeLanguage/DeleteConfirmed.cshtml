@@ -1,0 +1,73 @@
+﻿@model EMS.Models.EmployeeLanguage
+
+@{
+    ViewBag.Title = "DeleteConfirmed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteConfirmed</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EmployeeLanguage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.LanguageCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.LanguageCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speaking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Writing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Writing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Understanding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Understanding)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

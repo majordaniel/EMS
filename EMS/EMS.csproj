@@ -170,6 +170,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeEducationController.cs" />
+    <Compile Include="Controllers\EmployeeLanguageController.cs" />
     <Compile Include="Controllers\EmployeeSkillController.cs" />
     <Compile Include="Controllers\EmployeeTrainingHistoryController.cs" />
     <Compile Include="Controllers\EmploymentHistoryController.cs" />
@@ -227,6 +228,10 @@
     <Compile Include="Migrations\201801122232299_addEmployeeSkill.Designer.cs">
       <DependentUpon>201801122232299_addEmployeeSkill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801132154538_addEmployeeLanguage.cs" />
+    <Compile Include="Migrations\201801132154538_addEmployeeLanguage.Designer.cs">
+      <DependentUpon>201801132154538_addEmployeeLanguage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Certification.cs" />
@@ -238,6 +243,7 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeEducation.cs" />
+    <Compile Include="Models\EmployeeLanguage.cs" />
     <Compile Include="Models\EmployeeSkill.cs" />
     <Compile Include="Models\EmployeeTrainingHistory.cs" />
     <Compile Include="Models\EmploymentHistory.cs" />
@@ -770,6 +776,10 @@
     <Content Include="Views\EmployeeSkill\SaveEmployeeSkill.cshtml" />
     <Content Include="Views\EmployeeSkill\EditEmployeeSkill.cshtml" />
     <Content Include="Views\EmployeeSkill\DeleteEmployeeSkill.cshtml" />
+    <Content Include="Views\EmployeeLanguage\ViewEmployeeLanguage.cshtml" />
+    <Content Include="Views\EmployeeLanguage\SaveEmployeeLanguage.cshtml" />
+    <Content Include="Views\EmployeeLanguage\EditEmployeeLanguage.cshtml" />
+    <Content Include="Views\EmployeeLanguage\DeleteConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -811,6 +821,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801122232299_addEmployeeSkill.resx">
       <DependentUpon>201801122232299_addEmployeeSkill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801132154538_addEmployeeLanguage.resx">
+      <DependentUpon>201801132154538_addEmployeeLanguage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

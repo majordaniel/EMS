@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EMS.Models.EmployeeLanguage>
+
+@{
+    ViewBag.Title = "ViewEmployeeLanguage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewEmployeeLanguage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.LanguageCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speaking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Writing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Understanding)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language.LanguageCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speaking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Writing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Understanding)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
