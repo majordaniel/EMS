@@ -5,78 +5,138 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SaveEmployeeLanguage</h2>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>EmployeeLanguage</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+<br />
+<section class="content" style="width: 800px;">
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeId, "EmployeeId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", String.Empty)
-                @Html.ValidationMessageFor(model => model.EmployeeId)
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Save Employee Language</h4>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.EmployeeId, ViewBag.EmployeeId as SelectList, "Select Employee Reg.No.", new { @class = "form-control", @id = "EmployeeId" })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!----Start Show Area---->
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Name</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Name" name="name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Email</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Email" name="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">NID</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="NID" name="NID" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Department</label>
+                        <div class="col-md-4">
+                            <input type="text" readonly="readonly" class="form-control" id="Department" name="Department" />
+                        </div>
+                    </div>
+                    <!----End Show Area---->
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LanguageId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.LanguageId, ViewBag.LanguageId as SelectList, "Select Language", new { @class = "form-control"})
+                            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reading, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Reading,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Reading, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Speaking, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Speaking,new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Speaking,"",new{@class="text-danger"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Writing, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Writing, new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Writing, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Understanding, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Understanding, new{@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Understanding, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-success" /> ||
+                            @Html.ActionLink("Reset", "SaveEmployeeLanguage", "EmployeeLanguage", null, new { @class = "btn btn-warning" }) ||
+                            @Html.ActionLink("View", "ViewEmployeeLanguage", "EmployeeLanguage", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LanguageId, "LanguageId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("LanguageId", String.Empty)
-                @Html.ValidationMessageFor(model => model.LanguageId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Reading, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Reading)
-                @Html.ValidationMessageFor(model => model.Reading)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Speaking, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Speaking)
-                @Html.ValidationMessageFor(model => model.Speaking)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Writing, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Writing)
-                @Html.ValidationMessageFor(model => model.Writing)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Understanding, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Understanding)
-                @Html.ValidationMessageFor(model => model.Understanding)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
+    }
+</section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(function () {
+            $("#EmployeeId").change(function () {
+                //  alert($(this).val() + " " + $(this).find("option:selected").html());
+                var emId = $(this).val();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetEmployeeInfoById", "EmployeeSkill")',
+                    data: '{employeeId: "' + emId + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        //alert(data.LastName);
+                        $("#Name").val(data.name);
+                        $("#Email").val(data.email);
+                        $("#NID").val(data.nid);
+                        $("#Department").val(data.department.DepartmentName);
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve counties.');
+                    }
+                });
+
+            });
+        });
+
+    </script>
 }

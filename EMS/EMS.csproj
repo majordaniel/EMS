@@ -779,7 +779,7 @@
     <Content Include="Views\EmployeeLanguage\ViewEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeLanguage\SaveEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeLanguage\EditEmployeeLanguage.cshtml" />
-    <Content Include="Views\EmployeeLanguage\DeleteConfirmed.cshtml" />
+    <Content Include="Views\EmployeeLanguage\DeleteEmployeeLanguage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

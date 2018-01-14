@@ -1,0 +1,83 @@
+﻿@model EMS.Models.EmployeeLanguage
+
+@{
+    ViewBag.Title = "DeleteEmployeeLanguage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<section class="content" style=" width: 700px;">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Delete Employee Skill</h4>
+            </div>
+            <div align="center">
+                <h3>Are you sure you want to delete this?</h3>
+                <br />
+                <dl>
+                    <dt>
+                       Employee
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Employee.EmployeeRegNo)
+                    </dd>
+
+                    <dt>
+                        Language
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Language.LanguageName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Reading)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Reading)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Speaking)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Speaking)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Writing)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Writing)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Understanding)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Understanding)
+                    </dd>
+
+
+                    <br />
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            @Html.ActionLink("Back", "ViewEmployeeLanguage", "EmployeeLanguage", new { @class = "btn btn-primary" })
+                        </div>
+                    }
+                    <br />
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
