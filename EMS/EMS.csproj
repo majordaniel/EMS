@@ -168,6 +168,7 @@
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\EmployeeCertificationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeEducationController.cs" />
     <Compile Include="Controllers\EmployeeLanguageController.cs" />
@@ -232,6 +233,14 @@
     <Compile Include="Migrations\201801132154538_addEmployeeLanguage.Designer.cs">
       <DependentUpon>201801132154538_addEmployeeLanguage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801142222332_addEmployeeCertification.cs" />
+    <Compile Include="Migrations\201801142222332_addEmployeeCertification.Designer.cs">
+      <DependentUpon>201801142222332_addEmployeeCertification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151212128_updateEmployeeCertification.cs" />
+    <Compile Include="Migrations\201801151212128_updateEmployeeCertification.Designer.cs">
+      <DependentUpon>201801151212128_updateEmployeeCertification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Certification.cs" />
@@ -242,6 +251,7 @@
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeCertification.cs" />
     <Compile Include="Models\EmployeEducation.cs" />
     <Compile Include="Models\EmployeeLanguage.cs" />
     <Compile Include="Models\EmployeeSkill.cs" />
@@ -780,6 +790,7 @@
     <Content Include="Views\EmployeeLanguage\SaveEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeLanguage\EditEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeLanguage\DeleteEmployeeLanguage.cshtml" />
+    <Content Include="Views\EmployeeCertification\ViewEmployeeCertification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -824,6 +835,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801132154538_addEmployeeLanguage.resx">
       <DependentUpon>201801132154538_addEmployeeLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801142222332_addEmployeeCertification.resx">
+      <DependentUpon>201801142222332_addEmployeeCertification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151212128_updateEmployeeCertification.resx">
+      <DependentUpon>201801151212128_updateEmployeeCertification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
