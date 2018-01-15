@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EMS.Models.EmployeeSkill>
+
+@{
+    ViewBag.Title = "ViewEmployeeSkill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content" style="background-color: #ffffff;">
+    <p>
+        <a class="btn btn-sm btn-primary" href="@Url.Action("SaveEmployeeSkill", "EmployeeSkill")">Add New <i class="fa fa-plus"></i></a>
+    </p>
+    <br />
+    <table id="myTable" class="table table-hover table-responsive table-striped table-condensed">
+        <thead>
+        <tr>
+            <th>
+                Employee
+            </th>
+            <th>
+               Skill
+            </th>
+            <th>
+               Details
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.EmployeeRegNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Skill.SkillName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Details)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployeeSkill", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteEmployeeSkill", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            </tbody>
+    </table>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
