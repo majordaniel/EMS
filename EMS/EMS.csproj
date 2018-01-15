@@ -791,6 +791,9 @@
     <Content Include="Views\EmployeeLanguage\EditEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeLanguage\DeleteEmployeeLanguage.cshtml" />
     <Content Include="Views\EmployeeCertification\ViewEmployeeCertification.cshtml" />
+    <Content Include="Views\EmployeeCertification\SaveEmployeeCertification.cshtml" />
+    <Content Include="Views\EmployeeCertification\EditEmployeeCertification.cshtml" />
+    <Content Include="Views\EmployeeCertification\DeleteEmployeeCertification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
