@@ -1042,13 +1042,13 @@ window.Modernizr = (function( window, document, undefined ) {
       /** Detect whether the browser supports default html5 styles */
       var supportsHtml5Styles;
 
-      /** Name of the expando, to work with multiple documents or to re-shiv one document */
+      /** Name of the expando, to work with multiple documents or to re-shiv one DocumentType */
       var expando = '_html5shiv';
 
       /** The id for the the documents expando */
       var expanID = 0;
 
-      /** Cached data for each document */
+      /** Cached data for each DocumentType */
       var expandoData = {};
 
       /** Detect whether the browser supports unknown elements */
@@ -1081,9 +1081,9 @@ window.Modernizr = (function( window, document, undefined ) {
       /*--------------------------------------------------------------------------*/
 
       /**
-       * Creates a style sheet with the given CSS text and adds it to the document.
+       * Creates a style sheet with the given CSS text and adds it to the DocumentType.
        * @private
-       * @param {Document} ownerDocument The document.
+       * @param {DocumentType} ownerDocument The DocumentType.
        * @param {String} cssText The CSS text.
        * @returns {StyleSheet} The style element.
        */
@@ -1106,9 +1106,9 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
         /**
-       * Returns the data associated to the given document
+       * Returns the data associated to the given DocumentType
        * @private
-       * @param {Document} ownerDocument The document.
+       * @param {DocumentType} ownerDocument The DocumentType.
        * @returns {Object} An object of data.
        */
       function getExpandoData(ownerDocument) {
@@ -1123,10 +1123,10 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       /**
-       * returns a shived element for the given nodeName and document
+       * returns a shived element for the given nodeName and DocumentType
        * @memberOf html5
        * @param {String} nodeName name of the element
-       * @param {Document} ownerDocument The context document.
+       * @param {DocumentType} ownerDocument The context DocumentType.
        * @returns {Object} The shived element.
        */
       function createElement(nodeName, ownerDocument, data){
@@ -1151,7 +1151,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
         // Avoid adding some elements to fragments in IE < 9 because
         // * Attributes like `name` or `type` cannot be set/changed once an element
-        //   is inserted into a document/fragment
+        //   is inserted into a DocumentType/fragment
         // * Link elements with `src` attributes that are inaccessible, as with
         //   a 403 response, will cause the tab/window to crash
         // * Script elements appended to fragments will execute when their `src`
@@ -1160,9 +1160,9 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       /**
-       * returns a shived DocumentFragment for the given document
+       * returns a shived DocumentFragment for the given DocumentType
        * @memberOf html5
-       * @param {Document} ownerDocument The context document.
+       * @param {DocumentType} ownerDocument The context DocumentType.
        * @returns {Object} The shived DocumentFragment.
        */
       function createDocumentFragment(ownerDocument, data){
@@ -1184,10 +1184,10 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       /**
-       * Shivs the `createElement` and `createDocumentFragment` methods of the document.
+       * Shivs the `createElement` and `createDocumentFragment` methods of the DocumentType.
        * @private
-       * @param {Document|DocumentFragment} ownerDocument The document.
-       * @param {Object} data of the document.
+       * @param {DocumentType|DocumentFragment} ownerDocument The DocumentType.
+       * @param {Object} data of the DocumentType.
        */
       function shivMethods(ownerDocument, data) {
         if (!data.cache) {
@@ -1222,10 +1222,10 @@ window.Modernizr = (function( window, document, undefined ) {
       /*--------------------------------------------------------------------------*/
 
       /**
-       * Shivs the given document.
+       * Shivs the given DocumentType.
        * @memberOf html5
-       * @param {Document} ownerDocument The document to shiv.
-       * @returns {Document} The shived document.
+       * @param {DocumentType} ownerDocument The DocumentType to shiv.
+       * @returns {DocumentType} The shived DocumentType.
        */
       function shivDocument(ownerDocument) {
         if (!ownerDocument) {
@@ -1282,7 +1282,7 @@ window.Modernizr = (function( window, document, undefined ) {
         'supportsUnknownElements': supportsUnknownElements,
 
         /**
-         * A flag to indicate that the document's `createElement` and `createDocumentFragment`
+         * A flag to indicate that the DocumentType's `createElement` and `createDocumentFragment`
          * methods should be overwritten.
          * @memberOf html5
          * @type Boolean
@@ -1296,7 +1296,7 @@ window.Modernizr = (function( window, document, undefined ) {
          */
         'type': 'default',
 
-        // shivs the document according to the specified `html5` object options
+        // shivs the DocumentType according to the specified `html5` object options
         'shivDocument': shivDocument,
 
         //creates a shived element
@@ -1311,7 +1311,7 @@ window.Modernizr = (function( window, document, undefined ) {
       // expose html5
       window.html5 = html5;
 
-      // shiv the document
+      // shiv the DocumentType
       shivDocument(document);
 
     }(this, document));
@@ -1366,7 +1366,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
     /*>>teststyles*/
-    // Modernizr.testStyles() allows you to add custom styles to the document and test an element afterwards
+    // Modernizr.testStyles() allows you to add custom styles to the DocumentType and test an element afterwards
     // Modernizr.testStyles('#modernizr { position:absolute }', function(elem, rule){ ... })
     Modernizr.testStyles    = injectElementWithStyles;
     /*>>teststyles*/

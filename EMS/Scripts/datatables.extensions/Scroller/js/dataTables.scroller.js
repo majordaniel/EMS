@@ -1,4 +1,4 @@
-/*! Scroller 1.2.2
+﻿/*! Scroller 1.2.2
  * ©2011-2014 SpryMedia Ltd - datatables.net/license
  */
 
@@ -65,7 +65,7 @@ var factory = function( $, DataTable ) {
  *  @requires DataTables 1.9.0+
  *
  *  @example
- *    $(document).ready(function() {
+ *    $(DocumentType).ready(function() {
  *        $('#example').dataTable( {
  *            "sScrollY": "200px",
  *            "sAjaxSource": "media/dataset/large.txt",
@@ -231,7 +231,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *  @param {int} iRow Row number to calculate the position of
 	 *  @returns {int} Pixels
 	 *  @example
-	 *    $(document).ready(function() {
+	 *    $(DocumentType).ready(function() {
 	 *      $('#example').dataTable( {
 	 *        "sScrollY": "200px",
 	 *        "sAjaxSource": "media/dataset/large.txt",
@@ -275,7 +275,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *  @param {int} [virtual=false] Perform the calculations in the virtual domain
 	 *  @returns {int} Row index
 	 *  @example
-	 *    $(document).ready(function() {
+	 *    $(DocumentType).ready(function() {
 	 *      $('#example').dataTable( {
 	 *        "sScrollY": "200px",
 	 *        "sAjaxSource": "media/dataset/large.txt",
@@ -307,7 +307,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *  @param {bool} [bAnimate=true] Animate the transition or not
 	 *  @returns {void}
 	 *  @example
-	 *    $(document).ready(function() {
+	 *    $(DocumentType).ready(function() {
 	 *      $('#example').dataTable( {
 	 *        "sScrollY": "200px",
 	 *        "sAjaxSource": "media/dataset/large.txt",
@@ -375,9 +375,9 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *    the new dimensions forming the basis for the draw.
 	 *  @returns {void}
 	 *  @example
-	 *    $(document).ready(function() {
+	 *    $(DocumentType).ready(function() {
 	 *      // Make the example container hidden to throw off the browser's sizing
-	 *      document.getElementById('container').style.display = "none";
+	 *      DocumentType.getElementById('container').style.display = "none";
 	 *      var oTable = $('#example').dataTable( {
 	 *        "sScrollY": "200px",
 	 *        "sAjaxSource": "media/dataset/large.txt",
@@ -391,7 +391,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *     
 	 *      setTimeout( function () {
 	 *        // Make the example container visible and recalculate the scroller sizes
-	 *        document.getElementById('container').style.display = "block";
+	 *        DocumentType.getElementById('container').style.display = "block";
 	 *        oTable.fnSettings().oScroller.fnMeasure();
 	 *      }, 3000 );
 	 */
@@ -874,8 +874,8 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 
 	/**
 	 * Automatic calculation of table row height. This is just a little tricky here as using
-	 * initialisation DataTables has tale the table out of the document, so we need to create
-	 * a new table and insert it into the document, calculate the row height and then whip the
+	 * initialisation DataTables has tale the table out of the DocumentType, so we need to create
+	 * a new table and insert it into the DocumentType, calculate the row height and then whip the
 	 * table out.
 	 *  @returns {void}
 	 *  @private

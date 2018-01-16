@@ -603,7 +603,7 @@ throw new Error('AdminLTE requires jQuery')
     var sidebarHeight = $(Selector.sidebar).height() || 0
 
     // Set the min-height of the content and sidebar based on
-    // the height of the document.
+    // the height of the DocumentType.
     if ($('body').hasClass(ClassName.fixed)) {
       $(Selector.contentWrapper).css('min-height', windowHeight - footerHeight)
     } else {

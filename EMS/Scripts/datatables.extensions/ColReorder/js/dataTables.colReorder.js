@@ -1,4 +1,4 @@
-/*! ColReorder 1.1.2
+﻿/*! ColReorder 1.1.2
  * ©2010-2014 SpryMedia Ltd - datatables.net/license
  */
 
@@ -861,7 +861,7 @@ ColReorder.prototype = {
 
 		this._fnRegions();
 
-		/* Add event handlers to the document */
+		/* Add event handlers to the DocumentType */
 		$(document)
 			.on( 'mousemove.ColReorder', function (e) {
 				that._fnMouseMove.call( that, e );

@@ -1,0 +1,55 @@
+﻿@model EMS.Models.DocumentType
+
+@{
+    ViewBag.Title = "EditDocumentTypeType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<section class="content" style="width: 700px;">
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Edit Document Type</h4>
+                    </div>
+                    <br/>
+                    @Html.HiddenFor(model=>model.Id)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TypeName,"Name", new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.TypeName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TypeName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            <input type="submit" value="Edit" class="btn btn-success" /> ||
+                            @Html.ActionLink("Reset", "SaveDocumentType", "DocumentType", null, new { @class = "btn btn-warning" }) ||
+                            @Html.ActionLink("View", "ViewDocumentType", "DocumentType", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

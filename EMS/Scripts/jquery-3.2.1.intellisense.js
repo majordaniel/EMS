@@ -236,8 +236,8 @@ intellisense.annotate(jQuery, {
   },
   'isXMLDoc': function() {
     /// <signature>
-    ///   <summary>Check to see if a DOM node is within an XML document (or is an XML document).</summary>
-    ///   <param name="node" type="Element">The DOM node that will be checked to see if it's in an XML document.</param>
+    ///   <summary>Check to see if a DOM node is within an XML DocumentType (or is an XML DocumentType).</summary>
+    ///   <param name="node" type="Element">The DOM node that will be checked to see if it's in an XML DocumentType.</param>
     ///   <returns type="Boolean" />
     /// </signature>
   },
@@ -301,7 +301,7 @@ intellisense.annotate(jQuery, {
     /// <signature>
     ///   <summary>Parses a string into an array of DOM nodes.</summary>
     ///   <param name="data" type="String">HTML string to be parsed</param>
-    ///   <param name="context" type="Element">Document element to serve as the context in which the HTML fragment will be created</param>
+    ///   <param name="context" type="Element">DocumentType element to serve as the context in which the HTML fragment will be created</param>
     ///   <param name="keepScripts" type="Boolean">A Boolean indicating whether to include scripts passed in the HTML string</param>
     ///   <returns type="Array" />
     /// </signature>
@@ -315,7 +315,7 @@ intellisense.annotate(jQuery, {
   },
   'parseXML': function() {
     /// <signature>
-    ///   <summary>Parses a string into an XML document.</summary>
+    ///   <summary>Parses a string into an XML DocumentType.</summary>
     ///   <param name="data" type="String">a well-formed XML string to be parsed</param>
     ///   <returns type="XMLDocument" />
     /// </signature>
@@ -666,11 +666,11 @@ intellisense.annotate(jQuery.Event.prototype, {
     /// <returns type="String" />
   },
   'pageX': function() {
-    /// <summary>The mouse position relative to the left edge of the document.</summary>
+    /// <summary>The mouse position relative to the left edge of the DocumentType.</summary>
     /// <returns type="Number" />
   },
   'pageY': function() {
-    /// <summary>The mouse position relative to the top edge of the document.</summary>
+    /// <summary>The mouse position relative to the top edge of the DocumentType.</summary>
     /// <returns type="Number" />
   },
   'preventDefault': function() {
@@ -733,7 +733,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Add elements to the set of matched elements.</summary>
     ///   <param name="selector" type="String">A string representing a selector expression to find additional elements to add to the set of matched elements.</param>
-    ///   <param name="context" type="Element">The point in the document at which the selector should begin matching; similar to the context argument of the $(selector, context) method.</param>
+    ///   <param name="context" type="Element">The point in the DocumentType at which the selector should begin matching; similar to the context argument of the $(selector, context) method.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1095,7 +1095,7 @@ intellisense.annotate(jQuery.fn, {
     /// <returns type="jQuery" />
   },
   'context': function() {
-    /// <summary>The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document.</summary>
+    /// <summary>The DOM node context originally passed to jQuery(); if none was passed then context will likely be the DocumentType.</summary>
     /// <returns type="Element" />
   },
   'css': function() {
@@ -1547,7 +1547,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Accepts a string containing a CSS selector which is then used to match a set of elements.</summary>
     ///   <param name="selector" type="String">A string containing a selector expression</param>
-    ///   <param name="context" type="">A DOM Element, Document, or jQuery to use as context</param>
+    ///   <param name="context" type="">A DOM Element, DocumentType, or jQuery to use as context</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1937,12 +1937,12 @@ intellisense.annotate(jQuery.fn, {
   },
   'offset': function() {
     /// <signature>
-    ///   <summary>Set the current coordinates of every element in the set of matched elements, relative to the document.</summary>
+    ///   <summary>Set the current coordinates of every element in the set of matched elements, relative to the DocumentType.</summary>
     ///   <param name="coordinates" type="PlainObject">An object containing the properties top and left, which are integers indicating the new top and left coordinates for the elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Set the current coordinates of every element in the set of matched elements, relative to the document.</summary>
+    ///   <summary>Set the current coordinates of every element in the set of matched elements, relative to the DocumentType.</summary>
     ///   <param name="function(index, coords)" type="Function">A function to return the coordinates to set. Receives the index of the element in the collection as the first argument and the current coordinates as the second argument. The function should return an object with the new top and left properties.</param>
     ///   <returns type="jQuery" />
     /// </signature>
@@ -2241,7 +2241,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
   },
   'root': function() {
-    /// <summary>Selects the element that is the root of the document.</summary>
+    /// <summary>Selects the element that is the root of the DocumentType.</summary>
   },
   'scroll': function() {
     /// <signature>
@@ -2426,7 +2426,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
   },
   'target': function() {
-    /// <summary>Selects the target element indicated by the fragment identifier of the document's URI.</summary>
+    /// <summary>Selects the target element indicated by the fragment identifier of the DocumentType's URI.</summary>
   },
   'text': function() {
     /// <signature>
@@ -2642,7 +2642,7 @@ intellisense.annotate(window, {
     /// <signature>
     ///   <summary>Accepts a string containing a CSS selector which is then used to match a set of elements.</summary>
     ///   <param name="selector" type="String">A string containing a selector expression</param>
-    ///   <param name="context" type="">A DOM Element, Document, or jQuery to use as context</param>
+    ///   <param name="context" type="">A DOM Element, DocumentType, or jQuery to use as context</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>

@@ -931,8 +931,8 @@ TableTools.prototype = {
 
 
 	/**
-	 * Get the title of the document - useful for file names. The title is retrieved from either
-	 * the configuration object's 'title' parameter, or the HTML document title
+	 * Get the title of the DocumentType - useful for file names. The title is retrieved from either
+	 * the configuration object's 'title' parameter, or the HTML DocumentType title
 	 *  @param   {Object} oConfig Button configuration object
 	 *  @returns {String} Button title
 	 */
@@ -1072,8 +1072,8 @@ TableTools.prototype = {
 	 *  @param {boolean} [oConfig.bShowAll=false] Show all rows in the table if true
 	 *  @param {string} [oConfig.sInfo] Information message, displayed as an overlay to the
 	 *    user to let them know what the print view is.
-	 *  @param {string} [oConfig.sMessage] HTML string to show at the top of the document - will
-	 *    be included in the printed document.
+	 *  @param {string} [oConfig.sMessage] HTML string to show at the top of the DocumentType - will
+	 *    be included in the printed DocumentType.
 	 */
 	"fnPrint": function ( bView, oConfig )
 	{
@@ -2456,7 +2456,7 @@ TableTools.prototype = {
 		this.s.print.saveScroll = $(window).scrollTop();
 		window.scrollTo( 0, 0 );
 
-		/* Bind a key event listener to the document for the escape key -
+		/* Bind a key event listener to the DocumentType for the escape key -
 		 * it is removed in the callback
 		 */
 		$(document).bind( "keydown.DTTT", function(e) {

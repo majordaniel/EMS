@@ -796,7 +796,7 @@ Responsive.version = '1.0.4';
 $.fn.dataTable.Responsive = Responsive;
 $.fn.DataTable.Responsive = Responsive;
 
-// Attach a listener to the document which listens for DataTables initialisation
+// Attach a listener to the DocumentType which listens for DataTables initialisation
 // events so we can automatically initialise
 $(document).on( 'init.dt.dtr', function (e, settings, json) {
 	if ( $(settings.nTable).hasClass( 'responsive' ) ||

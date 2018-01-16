@@ -369,7 +369,7 @@
                             <li><a href="@Url.Action("ViewEmployeeEducation", "EmployeEducation")"><i class="fa fa-circle-o"></i>Education</a></li>
                             <li><a href="@Url.Action("ViewEmploymentHistory", "EmploymentHistory")"><i class="fa fa-circle-o"></i>Employement history</a></li>
                             <li><a href="@Url.Action("ViewTrainingHistory", "EmployeeTrainingHistory")"><i class="fa fa-circle-o"></i>Training history</a></li>
-                            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Certification</a></li>
+                            <li><a href="@Url.Action("ViewEmployeeCertification","EmployeeCertification")"><i class="fa fa-circle-o"></i>Certification</a></li>
                             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Language</a></li>
                             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-files-o"></i>Documents</a></li>
                         </ul>
@@ -377,18 +377,16 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-file"></i>
-                            <span>Documents</span>
+                            <span>Documents Type</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            <li><a href="@Url.Action("ViewDocumentType","DocumentType")"><i class="fa fa-circle-o"></i>View Documents Type</a></li>
+                            <li><a href="@Url.Action("SaveDocumentType", "DocumentType")"><i class="fa fa-circle-o"></i>Save Documents Type</a></li>
+                            <li><a href="@Url.Action("EditDocumentType", "DocumentType")"><i class="fa fa-circle-o"></i>Edit Documents Type</a></li>
+                            <li><a href="@Url.Action("DeleteDocumentType", "DocumentType")"><i class="fa fa-circle-o"></i>Delete Documents Type</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

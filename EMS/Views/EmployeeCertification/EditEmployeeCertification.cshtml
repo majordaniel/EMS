@@ -18,7 +18,7 @@
             <div class="panel-group">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h4>Save Employee Skill</h4>
+                        <h4>Edit Employee Certification</h4>
                     </div>
                     <br/>
                     @Html.HiddenFor(model=>model.Id)
@@ -91,7 +91,7 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-4 col-md-10">
-                            <input type="submit" value="Save" class="btn btn-success" /> ||
+                            <input type="submit" value="Edit" class="btn btn-success" /> ||
                             @Html.ActionLink("Reset", "SaveEmployeeCertification", "EmployeeCertification", null, new { @class = "btn btn-warning" }) ||
                             @Html.ActionLink("View", "ViewEmployeeCertification", "EmployeeCertification", new { @class = "btn btn-primary" })
                         </div>
@@ -107,7 +107,6 @@
     <script type="text/javascript">
         $(function () {
             $("#EmployeeId").change(function () {
-                //  alert($(this).val() + " " + $(this).find("option:selected").html());
                 var emId = $(this).val();
                 $.ajax({
                     type: "POST",
@@ -116,7 +115,6 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
-                        //alert(data.LastName);
                         $("#Name").val(data.name);
                         $("#Email").val(data.email);
                         $("#NID").val(data.nid);

@@ -1311,7 +1311,7 @@ if (typeof jQuery === 'undefined') {
     this.inState   = { click: false, hover: false, focus: false }
 
     if (this.$element[0] instanceof document.constructor && !this.options.selector) {
-      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
+      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.DocumentType object!')
     }
 
     var triggers = this.options.trigger.split(' ')

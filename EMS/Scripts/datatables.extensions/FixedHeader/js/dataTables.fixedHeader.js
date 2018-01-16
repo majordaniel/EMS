@@ -1,4 +1,4 @@
-/*! FixedHeader 2.1.2
+﻿/*! FixedHeader 2.1.2
  * ©2010-2014 SpryMedia Ltd - datatables.net/license
  */
 
@@ -941,7 +941,7 @@ FixedHeader.oWin = {
 
 /*
  * Variable: oDoc
- * Purpose:  Store information about the document size
+ * Purpose:  Store information about the DocumentType size
  * Scope:    FixedHeader
  */
 FixedHeader.oDoc = {
@@ -958,7 +958,7 @@ FixedHeader.afnScroll = [];
 
 /*
  * Function: fnMeasure
- * Purpose:  Update the measurements for the window and document
+ * Purpose:  Update the measurements for the window and DocumentType
  * Returns:  -
  * Inputs:   -
  */

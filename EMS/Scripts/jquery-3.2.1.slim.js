@@ -19,7 +19,7 @@
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
-		// For environments that do not have a `window` with a `document`
+		// For environments that do not have a `window` with a `DocumentType`
 		// (such as Node.js), expose a factory as module.exports.
 		// This accentuates the need for the creation of a real `window`.
 		// e.g. var jQuery = require("jquery")(window);
@@ -28,7 +28,7 @@
 			factory( global, true ) :
 			function( w ) {
 				if ( !w.document ) {
-					throw new Error( "jQuery requires a window with a document" );
+					throw new Error( "jQuery requires a window with a DocumentType" );
 				}
 				return factory( w );
 			};
@@ -560,7 +560,7 @@ var i,
 	sortInput,
 	hasDuplicate,
 
-	// Local document vars
+	// Local DocumentType vars
 	setDocument,
 	document,
 	docElem,
@@ -755,7 +755,7 @@ function Sizzle( selector, context, results, seed ) {
 	var m, i, elem, nid, match, groups, newSelector,
 		newContext = context && context.ownerDocument,
 
-		// nodeType defaults to 9, since context defaults to document
+		// nodeType defaults to 9, since context defaults to DocumentType
 		nodeType = context ? context.nodeType : 9;
 
 	results = results || [];
@@ -784,7 +784,7 @@ function Sizzle( selector, context, results, seed ) {
 				// ID selector
 				if ( (m = match[1]) ) {
 
-					// Document context
+					// DocumentType context
 					if ( nodeType === 9 ) {
 						if ( (elem = context.getElementById( m )) ) {
 
@@ -949,7 +949,7 @@ function addHandle( attrs, handler ) {
 }
 
 /**
- * Checks document order of two siblings
+ * Checks DocumentType order of two siblings
  * @param {Element} a
  * @param {Element} b
  * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
@@ -1090,7 +1090,7 @@ support = Sizzle.support = {};
 
 /**
  * Detects XML nodes
- * @param {Element|Object} elem An element or a document
+ * @param {Element|Object} elem An element or a DocumentType
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
 isXML = Sizzle.isXML = function( elem ) {
@@ -1101,9 +1101,9 @@ isXML = Sizzle.isXML = function( elem ) {
 };
 
 /**
- * Sets document-related variables once based on the current document
- * @param {Element|Object} [doc] An element or document object to use to set the document
- * @returns {Object} Returns the current document
+ * Sets DocumentType-related variables once based on the current DocumentType
+ * @param {Element|Object} [doc] An element or DocumentType object to use to set the DocumentType
+ * @returns {Object} Returns the current DocumentType
  */
 setDocument = Sizzle.setDocument = function( node ) {
 	var hasCompare, subWindow,
@@ -1270,7 +1270,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// qSa(:focus) reports false when true (Chrome 21)
 	// We allow this because of a bug in IE8/9 that throws an error
-	// whenever `document.activeElement` is accessed on an iframe
+	// whenever `DocumentType.activeElement` is accessed on an iframe
 	// So, we allow :focus to pass through QSA all the time to avoid the IE error
 	// See https://bugs.jquery.com/ticket/13378
 	rbuggyQSA = [];
@@ -1409,7 +1409,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	/* Sorting
 	---------------------------------------------------------------------- */
 
-	// Document order sorting
+	// DocumentType order sorting
 	sortOrder = hasCompare ?
 	function( a, b ) {
 
@@ -1425,7 +1425,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			return compare;
 		}
 
-		// Calculate position if both inputs belong to the same document
+		// Calculate position if both inputs belong to the same DocumentType
 		compare = ( a.ownerDocument || a ) === ( b.ownerDocument || b ) ?
 			a.compareDocumentPosition( b ) :
 
@@ -1436,7 +1436,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		if ( compare & 1 ||
 			(!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
 
-			// Choose the first element that is related to our preferred document
+			// Choose the first element that is related to our preferred DocumentType
 			if ( a === document || a.ownerDocument === preferredDoc && contains(preferredDoc, a) ) {
 				return -1;
 			}
@@ -1500,7 +1500,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Do a sibling check if the nodes have a common ancestor
 			siblingCheck( ap[i], bp[i] ) :
 
-			// Otherwise nodes in our document sort first
+			// Otherwise nodes in our DocumentType sort first
 			ap[i] === preferredDoc ? -1 :
 			bp[i] === preferredDoc ? 1 :
 			0;
@@ -1514,7 +1514,7 @@ Sizzle.matches = function( expr, elements ) {
 };
 
 Sizzle.matchesSelector = function( elem, expr ) {
-	// Set document vars if needed
+	// Set DocumentType vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
 		setDocument( elem );
 	}
@@ -1532,7 +1532,7 @@ Sizzle.matchesSelector = function( elem, expr ) {
 
 			// IE 9's matchesSelector returns false on disconnected nodes
 			if ( ret || support.disconnectedMatch ||
-					// As well, disconnected nodes are said to be in a document
+					// As well, disconnected nodes are said to be in a DocumentType
 					// fragment in IE 9
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
@@ -1544,7 +1544,7 @@ Sizzle.matchesSelector = function( elem, expr ) {
 };
 
 Sizzle.contains = function( context, elem ) {
-	// Set document vars if needed
+	// Set DocumentType vars if needed
 	if ( ( context.ownerDocument || context ) !== document ) {
 		setDocument( context );
 	}
@@ -1552,7 +1552,7 @@ Sizzle.contains = function( context, elem ) {
 };
 
 Sizzle.attr = function( elem, name ) {
-	// Set document vars if needed
+	// Set DocumentType vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
 		setDocument( elem );
 	}
@@ -1581,7 +1581,7 @@ Sizzle.error = function( msg ) {
 };
 
 /**
- * Document sorting and removing duplicates
+ * DocumentType sorting and removing duplicates
  * @param {ArrayLike} results
  */
 Sizzle.uniqueSort = function( results ) {
@@ -2732,7 +2732,7 @@ support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
 // Always assume duplicates if they aren't passed to the comparison function
 support.detectDuplicates = !!hasDuplicate;
 
-// Initialize against the default document
+// Initialize against the default DocumentType
 setDocument();
 
 // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
@@ -2948,7 +2948,7 @@ jQuery.fn.extend( {
 // Initialize a jQuery object
 
 
-// A central reference to the root jQuery(document)
+// A central reference to the root jQuery(DocumentType)
 var rootjQuery,
 
 	// A simple way to check for HTML strings
@@ -3044,7 +3044,7 @@ var rootjQuery,
 			return this;
 
 		// HANDLE: $(function)
-		// Shortcut for document ready
+		// Shortcut for DocumentType ready
 		} else if ( jQuery.isFunction( selector ) ) {
 			return root.ready !== undefined ?
 				root.ready( selector ) :
@@ -3100,7 +3100,7 @@ jQuery.fn.extend( {
 			for ( ; i < l; i++ ) {
 				for ( cur = this[ i ]; cur && cur !== context; cur = cur.parentNode ) {
 
-					// Always skip document fragments
+					// Always skip DocumentType fragments
 					if ( cur.nodeType < 11 && ( targets ?
 						targets.index( cur ) > -1 :
 
@@ -3930,7 +3930,7 @@ function completed() {
 	jQuery.ready();
 }
 
-// Catch cases where $(document).ready() is called
+// Catch cases where $(DocumentType).ready() is called
 // after the browser event has already occurred.
 // Support: IE <=9 - 10 only
 // Older IE sometimes signals "interactive" too soon
@@ -4504,7 +4504,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Otherwise, check computed style
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
-			// in the document.
+			// in the DocumentType.
 			jQuery.contains( elem.ownerDocument, elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
@@ -4991,7 +4991,7 @@ jQuery.event = {
 		}
 
 		// Ensure that invalid selectors throw exceptions at attach time
-		// Evaluate against documentElement in case elem is a non-element node (e.g., document)
+		// Evaluate against documentElement in case elem is a non-element node (e.g., DocumentType)
 		if ( selector ) {
 			jQuery.find.matchesSelector( documentElement, selector );
 		}
@@ -5390,7 +5390,7 @@ jQuery.Event = function( src, props ) {
 		this.originalEvent = src;
 		this.type = src.type;
 
-		// Events bubbling up the document may have been marked as prevented
+		// Events bubbling up the DocumentType may have been marked as prevented
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
@@ -5771,7 +5771,7 @@ function domManip( collection, args, callback, ignored ) {
 				// Reenable scripts
 				jQuery.map( scripts, restoreScript );
 
-				// Evaluate executable scripts on first document insertion
+				// Evaluate executable scripts on first DocumentType insertion
 				for ( i = 0; i < hasScripts; i++ ) {
 					node = scripts[ i ];
 					if ( rscriptType.test( node.type || "" ) &&
@@ -7376,7 +7376,7 @@ jQuery.extend( jQuery.event, {
 		}
 
 		// Determine event propagation path in advance, per W3C events spec (#9951)
-		// Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
+		// Bubble up to DocumentType, then to window; watch for a global ownerDocument var (#9724)
 		if ( !onlyHandlers && !special.noBubble && !jQuery.isWindow( elem ) ) {
 
 			bubbleType = special.delegateType || type;
@@ -7388,7 +7388,7 @@ jQuery.extend( jQuery.event, {
 				tmp = cur;
 			}
 
-			// Only add window if we got to document (e.g., not plain obj or detached DOM)
+			// Only add window if we got to DocumentType (e.g., not plain obj or detached DOM)
 			if ( tmp === ( elem.ownerDocument || document ) ) {
 				eventPath.push( tmp.defaultView || tmp.parentWindow || window );
 			}
@@ -7522,7 +7522,7 @@ support.focusin = "onfocusin" in window;
 if ( !support.focusin ) {
 	jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
 
-		// Attach a single capturing handler on the document while someone wants focusin/focusout
+		// Attach a single capturing handler on the DocumentType while someone wants focusin/focusout
 		var handler = function( event ) {
 			jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ) );
 		};
@@ -7751,7 +7751,7 @@ jQuery.expr.pseudos.visible = function( elem ) {
 
 
 // Support: Safari 8 only
-// In Safari 8 documents created via document.implementation.createHTMLDocument
+// In Safari 8 documents created via DocumentType.implementation.createHTMLDocument
 // collapse sibling forms: the second one becomes a child of the first one.
 // Because of that, this security measure has to be disabled in Safari 8.
 // https://bugs.webkit.org/show_bug.cgi?id=137337
@@ -7764,7 +7764,7 @@ support.createHTMLDocument = ( function() {
 
 // Argument "data" should be string of html
 // context (optional): If specified, the fragment will be created in this context,
-// defaults to document
+// defaults to DocumentType
 // keepScripts (optional): If true, will include scripts passed in the html string
 jQuery.parseHTML = function( data, context, keepScripts ) {
 	if ( typeof data !== "string" ) {
@@ -7780,13 +7780,13 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 	if ( !context ) {
 
 		// Stop scripts or inline event handlers from being executed immediately
-		// by using document.implementation
+		// by using DocumentType.implementation
 		if ( support.createHTMLDocument ) {
 			context = document.implementation.createHTMLDocument( "" );
 
-			// Set the base href for the created document
+			// Set the base href for the created DocumentType
 			// so any parsed elements with URLs
-			// are based on the document's URL (gh-2965)
+			// are based on the DocumentType's URL (gh-2965)
 			base = context.createElement( "base" );
 			base.href = document.location.href;
 			context.head.appendChild( base );
@@ -8043,7 +8043,7 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 						elem.document.documentElement[ "client" + name ];
 				}
 
-				// Get document width or height
+				// Get DocumentType width or height
 				if ( elem.nodeType === 9 ) {
 					doc = elem.documentElement;
 

@@ -167,6 +167,7 @@
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\DocumentTypeController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeCertificationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -241,6 +242,14 @@
     <Compile Include="Migrations\201801151212128_updateEmployeeCertification.Designer.cs">
       <DependentUpon>201801151212128_updateEmployeeCertification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801152144019_addDocuments.cs" />
+    <Compile Include="Migrations\201801152144019_addDocuments.Designer.cs">
+      <DependentUpon>201801152144019_addDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801152219220_updateDocumentstype.cs" />
+    <Compile Include="Migrations\201801152219220_updateDocumentstype.Designer.cs">
+      <DependentUpon>201801152219220_updateDocumentstype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Certification.cs" />
@@ -249,9 +258,11 @@
     <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
+    <Compile Include="Models\DocumentType.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeCertification.cs" />
+    <Compile Include="Models\EmployeeDocument.cs" />
     <Compile Include="Models\EmployeEducation.cs" />
     <Compile Include="Models\EmployeeLanguage.cs" />
     <Compile Include="Models\EmployeeSkill.cs" />
@@ -794,6 +805,10 @@
     <Content Include="Views\EmployeeCertification\SaveEmployeeCertification.cshtml" />
     <Content Include="Views\EmployeeCertification\EditEmployeeCertification.cshtml" />
     <Content Include="Views\EmployeeCertification\DeleteEmployeeCertification.cshtml" />
+    <Content Include="Views\DocumentType\ViewDocumentType.cshtml" />
+    <Content Include="Views\DocumentType\SaveDocumentType.cshtml" />
+    <Content Include="Views\DocumentType\EditDocumentType.cshtml" />
+    <Content Include="Views\DocumentType\DeleteDocumentType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -844,6 +859,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801151212128_updateEmployeeCertification.resx">
       <DependentUpon>201801151212128_updateEmployeeCertification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801152144019_addDocuments.resx">
+      <DependentUpon>201801152144019_addDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801152219220_updateDocumentstype.resx">
+      <DependentUpon>201801152219220_updateDocumentstype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

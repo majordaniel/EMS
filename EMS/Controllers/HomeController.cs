@@ -23,6 +23,7 @@ namespace EMS.Controllers
             ViewBag.TotalSkill = db.Skills.Count();
             ViewBag.TotalLanguage = db.Languages.Count();
             ViewBag.CertificationCount = db.Certifications.Count();
+            ViewBag.TotalDocumentType = db.DocumentTypes.Count();
             return View();
         }
 
