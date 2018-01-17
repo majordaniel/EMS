@@ -35,6 +35,7 @@ namespace EMS.Gateway
         public DbSet<EmployeeLanguage> EmployeeLanguages { get; set; }
         public DbSet<EmployeeCertification> EmployeeCertifications { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<EmployeeDocument> EmployeeDocuments { get; set; }
 
 
 

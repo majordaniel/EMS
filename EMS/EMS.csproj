@@ -171,6 +171,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeCertificationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeDocumentController.cs" />
     <Compile Include="Controllers\EmployeEducationController.cs" />
     <Compile Include="Controllers\EmployeeLanguageController.cs" />
     <Compile Include="Controllers\EmployeeSkillController.cs" />
@@ -249,6 +250,18 @@
     <Compile Include="Migrations\201801152219220_updateDocumentstype.cs" />
     <Compile Include="Migrations\201801152219220_updateDocumentstype.Designer.cs">
       <DependentUpon>201801152219220_updateDocumentstype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801161751414_addEmployeeDocuments.cs" />
+    <Compile Include="Migrations\201801161751414_addEmployeeDocuments.Designer.cs">
+      <DependentUpon>201801161751414_addEmployeeDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801162318185_updateEmployeeDocuments.cs" />
+    <Compile Include="Migrations\201801162318185_updateEmployeeDocuments.Designer.cs">
+      <DependentUpon>201801162318185_updateEmployeeDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801170122058_updateEmployeeDocuments1.cs" />
+    <Compile Include="Migrations\201801170122058_updateEmployeeDocuments1.Designer.cs">
+      <DependentUpon>201801170122058_updateEmployeeDocuments1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -809,9 +822,12 @@
     <Content Include="Views\DocumentType\SaveDocumentType.cshtml" />
     <Content Include="Views\DocumentType\EditDocumentType.cshtml" />
     <Content Include="Views\DocumentType\DeleteDocumentType.cshtml" />
+    <Content Include="Views\EmployeeDocument\ViewEmployeeDocuments.cshtml" />
+    <Content Include="Views\EmployeeDocument\SaveEmployeeDocuments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -866,6 +882,15 @@
     <EmbeddedResource Include="Migrations\201801152219220_updateDocumentstype.resx">
       <DependentUpon>201801152219220_updateDocumentstype.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801161751414_addEmployeeDocuments.resx">
+      <DependentUpon>201801161751414_addEmployeeDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801162318185_updateEmployeeDocuments.resx">
+      <DependentUpon>201801162318185_updateEmployeeDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170122058_updateEmployeeDocuments1.resx">
+      <DependentUpon>201801170122058_updateEmployeeDocuments1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -885,7 +910,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>32153</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:32153/</IISUrl>
+          <IISUrl>http://localhost:32155/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
