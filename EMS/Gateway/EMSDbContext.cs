@@ -37,6 +37,7 @@ namespace EMS.Gateway
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<EmployeeDocument> EmployeeDocuments { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
 
 
@@ -49,6 +50,8 @@ namespace EMS.Gateway
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
         }
+
+        public System.Data.Entity.DbSet<EMS.Models.Role> Roles { get; set; }
         
     }
 }

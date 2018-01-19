@@ -19,11 +19,9 @@ namespace EMS.Controllers
 
         public ActionResult ViewEmployeeDocuments()
         {
-            var employeedocuments = db.EmployeeDocuments.Include(e => e.DocumentType).Include(e => e.Employee);
-            return View(employeedocuments.ToList());
+            var employeedocuments = db.EmployeeDocuments.Include(e => e.DocumentType).Include(e => e.Employee).ToList();
+            return View(employeedocuments);
         }
-
-
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -51,36 +49,36 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SaveEmployeeDocuments(EmployeeDocument employeedocument, HttpPostedFileBase file)
         {
-            
-            //if (ModelState.IsValid)
-            //{
-            //    if (file != null)
-            //    {
-            //        string fileName = Path.GetFileNameWithoutExtension(file.FileName);
-            //        string extension = Path.GetExtension(file.FileName);
-            //        fileName = fileName + DateTime.Now.ToString("yymmdd") + extension;
-            //        employeedocument.FilePath = "~/Documents/" + fileName;
-            //        fileName = Path.Combine(Server.MapPath("~/Documents/"), fileName);
-            //        file.SaveAs(Path.Combine(fileName));
-            //        employeedocument.FilePath = fileName;
-            //    }
-            //    using (EMSDbContext dc = new EMSDbContext())
-            //    {
-            //        dc.EmployeeDocuments.Add(employeedocument);
-            //        dc.SaveChanges();
-            //    }
-            //    ModelState.Clear();
-            //    ViewBag.FileStatus = "File uploaded successfully.";
-            //}
 
             if (ModelState.IsValid)
             {
-                db.EmployeeDocuments.Add(employeedocument);
-                db.SaveChanges();
+                if (file != null)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extension = Path.GetExtension(file.FileName);
+                    fileName = fileName + DateTime.Now.ToString("yymmdd") + extension;
+                    employeedocument.FilePath = "~/Image/" + fileName;
+                    fileName = Path.Combine(Server.MapPath("~/Image/"), fileName);
+                    file.SaveAs(Path.Combine(fileName));
+                    employeedocument.FilePath = fileName;
+                }
+                using (EMSDbContext dc = new EMSDbContext())
+                {
+                    dc.EmployeeDocuments.Add(employeedocument);
+                    dc.SaveChanges();
+                }
+                ModelState.Clear();
                 ViewBag.FileStatus = "File uploaded successfully.";
             }
-            ModelState.Clear();
-            
+
+            //if (ModelState.IsValid)
+            //{
+            //    db.EmployeeDocuments.Add(employeedocument);
+            //    db.SaveChanges();
+            //    ViewBag.FileStatus = "File uploaded successfully.";
+            //}
+            //ModelState.Clear();
+
             ViewBag.DocumentTypeId = new SelectList(db.DocumentTypes, "Id", "TypeName", employeedocument.DocumentTypeId);
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeRegNo", employeedocument.EmployeeId);
 
@@ -88,6 +86,12 @@ namespace EMS.Controllers
 
         }
 
+        public FileResult DownloadDocument(int id = 0)
+        {
+            var employeedocument = db.EmployeeDocuments.Find(id);
+            string Filename = employeedocument.FilePath;
+            return File(System.IO.Path.Combine("~/Image/", Filename), "application/octet-stream", Filename);
+        }
        
         public ActionResult EditEmployeeDocuments(int? id)
         {
@@ -108,13 +112,27 @@ namespace EMS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditEmployeeDocuments([Bind(Include = "Id,EmployeeId,DocumentTypeId,DocumentTitle,DocumentAddedDate,ExpiredDate,Details,FilePath")] EmployeeDocument employeedocument)
+        public ActionResult EditEmployeeDocuments(EmployeeDocument employeedocument, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employeedocument).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("ViewEmployeeDocuments");
+                if (file != null)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extension = Path.GetExtension(file.FileName);
+                    fileName = fileName + DateTime.Now.ToString("yymmdd") + extension;
+                    employeedocument.FilePath = "~/Image/" + fileName;
+                    fileName = Path.Combine(Server.MapPath("~/Image/"), fileName);
+                    file.SaveAs(Path.Combine(fileName));
+                    employeedocument.FilePath = fileName;
+                }
+                using (EMSDbContext dc = new EMSDbContext())
+                {
+                    dc.Entry(employeedocument).State = EntityState.Modified;
+                    dc.SaveChanges();
+                }
+                ModelState.Clear();
+                ViewBag.FileStatus = "File edit successfully.";
             }
             ViewBag.DocumentTypeId = new SelectList(db.DocumentTypes, "Id", "TypeName", employeedocument.DocumentTypeId);
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeRegNo", employeedocument.EmployeeId);

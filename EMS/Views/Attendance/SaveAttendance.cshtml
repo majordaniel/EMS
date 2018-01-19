@@ -1,0 +1,86 @@
+﻿@model EMS.Models.Attendance
+
+@{
+    ViewBag.Title = "SaveAttendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+}
+
+
+<br />
+<section class="content" style="width: 800px;">
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        if (@ViewBag.Attendance != null)
+        {
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="alert alert-@ViewBag.Attendance" style="color: #3cb371;">
+                        @Html.Raw(@ViewBag.Attendance)
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Save Employee Documents</h4>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.EmployeeId, ViewBag.EmployeeId as SelectList, "Select Employee Reg.No.", new { @class = "form-control", @id = "EmployeeId" })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.InTime, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.InTime, new { @class = "form-control", @id = "InTime" })
+                            @Html.ValidationMessageFor(model => model.InTime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OutTime, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.OutTime, new { @class = "form-control", id = "OutTime"})
+                            @Html.ValidationMessageFor(model => model.OutTime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Note, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextAreaFor(model => model.Note, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-success" /> ||
+                            @Html.ActionLink("Reset", "SaveAttendance", "Attendance", null, new { @class = "btn btn-warning" }) ||
+                            @Html.ActionLink("View", "ViewAttendance", "Attendance", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $('#InTime').datetimepicker();
+        $('#OutTime').datetimepicker();
+    </script>
+}

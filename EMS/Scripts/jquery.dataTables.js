@@ -12202,7 +12202,7 @@
 		 *          "targets": [ 0 ],
 		 *          "data": "download_link",
 		 *          "render": function ( data, type, full ) {
-		 *            return '<a href="'+data+'">Download</a>';
+		 *            return '<a href="'+data+'">DownloadDocument</a>';
 		 *          }
 		 *        } ]
 		 *      } );

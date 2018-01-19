@@ -73,14 +73,7 @@ namespace EMS.Controllers
             //ViewBag.CountryId = new SelectList(db.Countries, "Id", "CountryCode", division.CountryId);
             return View(country);
         }
-
-
-
-
-
-
-
-
+        
 
         public JsonResult Delete(int? id)
         {

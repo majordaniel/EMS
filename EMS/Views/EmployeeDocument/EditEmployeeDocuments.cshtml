@@ -1,0 +1,111 @@
+﻿@model EMS.Models.EmployeeDocument
+
+@{
+    ViewBag.Title = "EditEmployeeDocuments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<section class="content" style="width: 800px;">
+    <br />
+    @using (Html.BeginForm("EditEmployeeDocuments", "EmployeeDocument", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        if (@ViewBag.FileStatus != null)
+        {
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="alert alert-@ViewBag.FileStatus" style="color: #3cb371;">
+                        @Html.Raw(@ViewBag.FileStatus)
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Save Employee Documents</h4>
+                    </div>
+                    <br/>
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.EmployeeId, ViewBag.EmployeeId as SelectList, "Select Employee Reg.No.", new { @class = "form-control", @id = "EmployeeId" })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DocumentTypeId, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.DocumentTypeId, ViewBag.DocumentTypeId as SelectList, "Select Document type", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DocumentTypeId)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DocumentTitle, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.DocumentTitle)
+                            @Html.ValidationMessageFor(model => model.DocumentTitle)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DocumentAddedDate, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.DocumentAddedDate)
+                            @Html.ValidationMessageFor(model => model.DocumentAddedDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ExpiredDate, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.ExpiredDate, new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.ExpiredDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Details, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Details)
+                            @Html.ValidationMessageFor(model => model.Details)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Documets</label>
+                        <div class="col-md-4" style="display: @(string.IsNullOrEmpty(@Model.FilePath) ? "none" : "block")">
+                            @*<img src="/Image/@Model.FilePath" alt="image" width="100"/>*@
+                            <img src="@Url.Content("~/Image/")@Model.FilePath" width="100" height="100" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FilePath, new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            <input type="file" name="file" class="form-control" />
+                            @Html.ValidationMessageFor(model => model.FilePath)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            <input type="submit" value="Edit" class="btn btn-success" /> ||
+                            @Html.ActionLink("Reset", "SaveEmployeeDocuments", "EmployeeDocument", null, new { @class = "btn btn-warning" }) ||
+                            @Html.ActionLink("View", "ViewEmployeeDocuments", "EmployeeDocument", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
